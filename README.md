@@ -1,4 +1,4 @@
-# field-notes
+# ofd-notes
 
 Sahadan notlar.
 
