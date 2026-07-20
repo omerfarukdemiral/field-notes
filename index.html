@@ -55,6 +55,8 @@ a.card .m span:last-child::after { content:""; }
 
 .how { font-family:'IBM Plex Mono',monospace; font-size:16px; line-height:1.85; color:var(--muted); }
 .how b { color:var(--ink); font-weight:500; }
+.how a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line); transition:border-color .15s; }
+.how a:hover { border-color:var(--accent); }
 
 footer {
   margin-top:64px; padding-top:24px; border-top:1px solid var(--div);
@@ -115,14 +117,20 @@ footer a { color:var(--accent); text-decoration:none; }
     <div class="m"><span>61 dk</span><span>9 bölüm</span><span>10 kart</span></div>
   </a>
 
-  <h2>nasıl üretiliyor</h2>
+  <h2>nasıl üretiyorum</h2>
   <p class="how">
-    videonun transkripti çıkarılır, türkçeye çevrilir ve konu bütünlüğüne göre bölümlere ayrılır.
-    sonra metin baştan sona okunur — <b>özet değil, çıkarım aranır.</b>
-    her çıkarım içeriğine uygun bir kart formatına oturur: şema, süreç şeridi, karşılaştırma, metrik, liste, kod.
-    kartlar tek bir html dosyasında üretilip png'ye export edilir.
+    işin tamamını claude code ile, kendi yazdığım skill'ler üzerinden yürütüyorum.
+    önce videoyu türkçe altyazıya çeviriyorum — bunun için yazdığım
+    <a href="https://github.com/omerfarukdemiral/video-subtitles">video-subtitles skill'i</a>
+    whisper ile transkripti çıkarıyor, claude ile çeviriyor, "tool call" gibi terimleri
+    türkçeleştirmeden bırakıyor. çünkü onu zaten ingilizce biliyorum.
     <br><br>
-    kartlarda kural: uzun cümle yok, özet yok. <b>kart bir şeyi ya gösterir ya da göstermez.</b>
+    sonra altyazıyı baştan sona okuyorum. <b>özet çıkarmıyorum — çıkarım arıyorum.</b>
+    bir hafta sonra aklımda kalacak olan neyse, kart o oluyor. her çıkarımı içeriğine göre
+    bir formata oturtuyorum: şema, süreç şeridi, karşılaştırma, metrik, liste, kod. hepsini
+    tek bir html dosyasında yazıp png'ye alıyorum.
+    <br><br>
+    tek kuralım: uzun cümle yok, özet yok. <b>kart bir şeyi ya gösterir, ya da hiç göstermez.</b>
   </p>
 
   <footer>
