@@ -1,4 +1,4 @@
-# video-notlari
+# resources
 
 Uzun teknik videolar → bakınca anlaşılan infografik kartları.
 

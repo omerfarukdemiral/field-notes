@@ -6,15 +6,13 @@ Sahadan notlar.
 
 Bitmiş bir doküman değil — sürekli büyüyen bir defter.
 
-> Not almak öğrenmenin yarısı, paylaşmak diğer yarısı.
-
 ---
 
 ## Ne var burada
 
 | Klasör | İçerik |
 |---|---|
-| [`video-notlari/`](video-notlari/) | Uzun teknik videoların içinden çıkarılmış infografik kartları |
+| [`resources/`](resources/) | Uzun teknik videoların içinden çıkarılmış infografik kartları |
 
 Yeni başlıklar eklendikçe tablo büyüyecek.
 
