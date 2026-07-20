@@ -1,0 +1,544 @@
+1
+00:00:00,000 --> 00:00:04,880
+Cursor'a geçtim çünkü ürünün büyük
+hayranıyım. Ekiple tanıştım ve açıkçası
+
+2
+00:00:04,880 --> 00:00:09,920
+resmen etkilendim. Harika bir ekip.
+Hâlâ harika olduklarını düşünüyorum ve
+
+3
+00:00:09,920 --> 00:00:14,280
+gerçekten havalı şeyler yapıyorlar.
+AI ile kod yazmanın nereye gittiğini
+
+4
+00:00:14,280 --> 00:00:20,560
+çoğu insandan önce gördüler. Yani iyi
+ürün yapmak fikri beni heyecanlandırdı.
+
+5
+00:00:20,560 --> 00:00:26,240
+Ama oraya varır varmaz fark ettim ki
+Anthropic'te asıl özlediğim mission'dı.
+
+6
+00:00:26,240 --> 00:00:31,780
+Zaten en başta beni Anthropic'e sürükleyen
+de oydu. Çünkü Anthropic'e girmeden önce
+
+7
+00:00:31,780 --> 00:00:37,820
+big tech'te çalışıyordum. Sonra bir noktada
+bir lab'de çalışmak istedim, bu inşa
+
+8
+00:00:37,820 --> 00:00:43,380
+ettiğimiz çılgın şeyin geleceğini bir
+şekilde şekillendirmek için. Beni
+
+9
+00:00:43,380 --> 00:00:47,340
+Anthropic'e çeken mission'dı, tamamen
+safety üzerineydi. Anthropic'te biriyle
+
+10
+00:00:47,340 --> 00:00:52,480
+konuşursan, koridorda birini yakala,
+neden burada olduğunu sor, cevap her
+
+11
+00:00:52,480 --> 00:00:58,020
+zaman safety olur. Bu mission odaklılık
+bende gerçekten çok karşılık buldu.
+
+12
+00:00:58,020 --> 00:01:04,760
+Ve şahsen biliyorum ki mutlu olmak için
+buna ihtiyacım var. Asıl özlediğim şey
+
+13
+00:01:04,760 --> 00:01:09,400
+buydu. Gördüm ki iş ne olursa olsun, ne
+kadar heyecanlı olursa olsun, hatta
+
+14
+00:01:09,400 --> 00:01:13,700
+gerçekten havalı bir ürün yapmak bile
+bunun yerini tutmuyor. Yani benim için
+
+15
+00:01:13,700 --> 00:01:17,280
+bunu kaçırdığım
+oldukça çabuk belli oldu.
+
+16
+00:01:18,140 --> 00:01:22,020
+Tamam, Anthropic'e dönüşünün ve orada
+yaptığın işin ipini takip edelim.
+
+17
+00:01:22,460 --> 00:01:28,280
+Bu podcast, Claude Code'un lansmanının
+birinci yıl dönümünde yayınlanacak.
+
+18
+00:01:28,280 --> 00:01:34,080
+O yüzden yarattığın etki üzerine biraz
+düşünelim. Yakın zamanda bir rapor çıktı,
+
+19
+00:01:34,080 --> 00:01:38,680
+eminim görmüşsündür, Semi Analysis'ten.
+Tüm GitHub commit'lerinin yüzde dördünün
+
+20
+00:01:38,680 --> 00:01:45,460
+artık Claude Code tarafından yazıldığını
+gösteriyor. Yıl sonuna kadar GitHub'daki
+
+21
+00:01:45,460 --> 00:01:50,860
+commit'lerin beşte biri olacak. Deyimleri:
+"Biz göz kırparken AI yazılımı yuttu."
+
+22
+00:01:52,120 --> 00:01:56,740
+Bunu kaydettiğimiz gün Spotify bir başlık
+attı: en iyi geliştiricileri AI sayesinde
+
+23
+00:01:56,740 --> 00:02:03,060
+Aralık'tan beri tek satır kod yazmamış.
+Giderek daha çok ileri seviye
+
+24
+00:02:03,060 --> 00:02:08,320
+senior mühendis, sen de dahil, artık kod
+yazmadığını, her şeyin AI tarafından
+
+25
+00:02:08,320 --> 00:02:12,400
+üretildiğini söylüyor. Çoğu artık koda
+bakmıyor bile. Geldiğimiz nokta bu.
+
+26
+00:02:13,400 --> 00:02:18,400
+Büyük ölçüde senin başlattığın ve ekibinin
+geçen yıl büyüttüğü bu küçük proje
+
+27
+00:02:18,400 --> 00:02:23,900
+sayesinde. Geçen yıl ve işinin yarattığı
+etki üzerine ne düşündüğünü merak
+
+28
+00:02:23,900 --> 00:02:29,540
+ediyorum. Bu sayılar tamamen çılgınca,
+değil mi? Dünyadaki tüm commit'lerin
+
+29
+00:02:29,540 --> 00:02:34,600
+yüzde dördü, hayal ettiğimden çok fazla.
+Ve dediğin gibi, hâlâ başlangıç gibi
+
+30
+00:02:34,600 --> 00:02:38,760
+hissettiriyor. Bunlar sadece public
+commit'ler. Private repository'lere
+
+31
+00:02:38,760 --> 00:02:44,660
+bakınca bunun epey üstünde olduğunu
+düşünüyoruz. Benim için çılgın olan şu
+
+32
+00:02:44,660 --> 00:02:49,100
+anki sayı bile değil, büyüme hızımız.
+Çünkü Claude Code'un büyüme oranına
+
+33
+00:02:49,100 --> 00:02:55,180
+hangi metrikten bakarsan bak, hızlanmaya
+devam ediyor. Sadece yükselmiyor, gitgide
+
+34
+00:02:55,180 --> 00:03:01,620
+daha hızlı yükseliyor. Claude Code'a ilk
+başladığımda küçük bir hack olacaktı.
+
+35
+00:03:01,620 --> 00:03:07,120
+Anthropic'te genel olarak biliyorduk ki
+bir çeşit coding ürünü ship etmek istiyorduk.
+
+36
+00:03:07,120 --> 00:03:11,960
+Anthropic'te uzun süredir modelleri, güvenli
+AI'ı nasıl inşa ettiğimize dair zihinsel
+
+37
+00:03:11,960 --> 00:03:17,300
+modelimize uyacak şekilde geliştiriyorduk.
+Model önce kod yazmada çok iyi oluyor,
+
+38
+00:03:17,300 --> 00:03:21,020
+sonra tool use'da çok iyi oluyor, sonra
+computer use'da çok iyi oluyor. Kabaca
+
+39
+00:03:21,020 --> 00:03:27,260
+yörünge bu. Bunun üzerinde uzun süredir
+çalışıyoruz. Başladığım ekibe bakarsan,
+
+40
+00:03:27,260 --> 00:03:31,340
+adı Anthropic Labs ekibiydi. Mike Krieger
+ve Ben Mann bu ekibi yeniden
+
+41
+00:03:31,400 --> 00:03:36,640
+başlatmışlardı, ikinci raunt için.
+Ekip epey havalı şeyler yaptı.
+
+42
+00:03:36,640 --> 00:03:41,580
+Claude Code'u yaptık, MCP'yi yaptık,
+desktop uygulamasını yaptık. Yani bu
+
+43
+00:03:41,580 --> 00:03:45,580
+fikrin tohumlarını görebiliyorsun: önce
+coding, sonra tool use, sonra computer use.
+
+44
+00:03:46,540 --> 00:03:52,140
+Bunun Anthropic için önemli olma sebebi
+safety. Yine aynı noktaya dönüyoruz:
+
+45
+00:03:52,140 --> 00:03:56,340
+AI gitgide daha güçlü oluyor, gitgide daha
+yetenekli oluyor. Geçen yıl olan şey şu:
+
+46
+00:03:56,340 --> 00:04:01,080
+en azından mühendisler için AI artık sadece
+kod yazmıyor,
+
+47
+00:04:01,200 --> 00:04:05,020
+sadece bir sohbet partneri değil, gerçekten
+tool kullanıyor, dünyada eyleme geçiyor.
+
+48
+00:04:05,820 --> 00:04:10,640
+Ve şimdi Cowork'le birlikte teknik
+olmayanlar için de bu geçişi görüyoruz.
+
+49
+00:04:11,680 --> 00:04:16,140
+Konuşma tabanlı AI kullanan çoğu için
+bu, gerçekten eyleme geçen bir şeyi
+
+50
+00:04:16,140 --> 00:04:20,340
+kullandıkları ilk sefer olabilir. Gmail'ini
+kullanabiliyor, Slack'ini kullanabiliyor,
+
+51
+00:04:20,340 --> 00:04:23,680
+senin için her şeyi yapabiliyor ve epey
+iyi. Buradan sonrası daha da iyi olacak.
+
+52
+00:04:24,700 --> 00:04:28,080
+Anthropic'te uzun süre bir şey inşa etme
+isteği vardı ama
+
+53
+00:04:28,160 --> 00:04:34,380
+ne olacağı belli değildi. Anthropic'e
+katıldığımda bir ay hack'leyerek geçirdim,
+
+54
+00:04:34,420 --> 00:04:38,120
+bir sürü tuhaf prototype yaptım. Çoğu ship
+edilmedi, ship edilmeye yaklaşmadı bile.
+
+55
+00:04:38,120 --> 00:04:41,200
+Amaç sadece modelin sınırlarını
+anlamaktı.
+
+56
+00:04:41,940 --> 00:04:46,300
+Sonra bir ay post-training yaptım. İşin
+araştırma tarafını anlamak için.
+
+57
+00:04:46,960 --> 00:04:51,860
+Bir mühendis olarak şunu düşünüyorum:
+iyi iş çıkarmak için çalıştığın
+
+58
+00:04:51,860 --> 00:04:57,080
+katmanın altındaki katmanı anlaman lazım.
+Geleneksel mühendislikte,
+
+59
+00:04:57,080 --> 00:05:01,100
+ürün üzerinde çalışıyorsan, altyapıyı,
+runtime'ı,
+
+60
+00:05:01,420 --> 00:05:05,160
+sanal makineyi, dili, her ne ise, üzerine
+inşa ettiğin sistemi anlamak istersin.
+
+61
+00:05:05,880 --> 00:05:10,040
+AI'da çalışıyorsan da iyi iş çıkarmak için
+modeli bir dereceye kadar
+
+62
+00:05:10,040 --> 00:05:15,620
+anlaman gerekiyor. O yüzden küçük bir
+dolambaç yaptım. Sonra geri dönüp
+
+63
+00:05:15,620 --> 00:05:21,740
+sonunda Claude Code olacak şeyi prototype
+etmeye başladım. İlk versiyonunun
+
+64
+00:05:21,740 --> 00:05:26,260
+o yazdan bir video kaydı var, çünkü bir demo
+çekip paylaşmıştım. O zamanki adı
+
+65
+00:05:26,260 --> 00:05:31,520
+Claude CLI'ydı. Birkaç tool'u nasıl
+kullandığını gösterdim. Şoke eden şuydu:
+
+66
+00:05:31,520 --> 00:05:38,960
+Ona bir bash tool verdim ve bunu kullanarak
+ne müzik dinlediğimi söyleyen kod yazdı.
+
+67
+00:05:38,960 --> 00:05:43,640
+Ona sordum, "ne müzik dinliyorum?" diye.
+Ve bu en çılgın şey, değil mi?
+
+68
+00:05:43,680 --> 00:05:50,040
+Çünkü modele "şunun için şu tool'u kullan"
+diye bir talimat vermedim,
+
+69
+00:05:50,040 --> 00:05:53,680
+ya da başka bir şey. Modele bu tool verildi
+ve benim sorduğum soruyu cevaplamak için
+
+70
+00:05:53,680 --> 00:05:57,640
+kullanmayı kendi buldu. Cevaplayacağından
+emin bile değildim. Ne müzik dinliyorum?
+
+71
+00:05:58,980 --> 00:06:05,080
+Bunu biraz daha prototype etmeye başladım.
+Hakkında bir post yazdım ve
+
+72
+00:06:05,080 --> 00:06:10,880
+içeride duyurdum. İki like aldı.
+O zamanki tepki
+
+73
+00:06:10,880 --> 00:06:14,580
+bu kadardı. Çünkü içeride insanlar coding
+tool'ları deyince
+
+74
+00:06:14,580 --> 00:06:18,480
+IDE'leri düşünüyor, o gelişmiş ortamları
+düşünüyor.
+
+75
+00:06:19,160 --> 00:06:23,400
+Kimse bu şeyin terminal tabanlı olabileceğini
+düşünmedi. Tasarlamak için
+
+76
+00:06:23,400 --> 00:06:28,240
+tuhaf bir yol. Aslında niyet o da değildi.
+Ama en baştan beri terminal'de
+
+77
+00:06:28,240 --> 00:06:32,720
+yaptım çünkü ilk birkaç ay sadece bendim.
+Yani en kolay
+
+78
+00:06:32,720 --> 00:06:37,920
+yol oydu. Benim için bu epey önemli
+bir ürün dersi. Şöyle ki:
+
+79
+00:06:37,920 --> 00:06:44,040
+başlangıçta işlere biraz az kaynak vermek
+gerekiyor. Sonra başka hangi form
+
+80
+00:06:44,040 --> 00:06:49,320
+factor'leri yapmalıyız diye düşündük.
+Bir süre terminal'de kalmaya karar verdik.
+
+81
+00:06:49,320 --> 00:06:54,160
+Sebep şu: model çok hızlı gelişiyordu.
+Ona ayak uydurabilecek başka bir
+
+82
+00:06:54,160 --> 00:06:59,440
+form factor olmadığını hissettik. Açıkçası
+bu sadece benim kafa yormamdı:
+
+83
+00:06:59,440 --> 00:07:02,960
+ne yapmalıyız? Geçen yıl boyunca Claude Code
+düşündüğüm tek şeydi.
+
+84
+00:07:03,640 --> 00:07:06,440
+Gece geç saatlerde tek düşündüğüm buydu.
+Tamam,
+
+85
+00:07:06,440 --> 00:07:10,860
+model gelişmeye devam ediyor. Ne yapacağız?
+Nasıl ayak uydurabiliriz? Ve terminal
+
+86
+00:07:10,860 --> 00:07:18,400
+açıkçası aklıma gelen tek fikirdi.
+Ve tuttu. Yayınladıktan sonra
+
+87
+00:07:18,400 --> 00:07:23,380
+çok hızlı bir şekilde Anthropic'te hit oldu.
+Günlük aktif kullanıcılar dikey gitti.
+
+88
+00:07:23,580 --> 00:07:29,220
+Çok erken, hatta lansmandan önce, Ben Mann
+bana DAU grafiği yapmamı söyledi. Ben de
+
+89
+00:07:29,220 --> 00:07:32,420
+"biraz erken değil mi, şimdi mi yapsak
+gerçekten?" dedim. O da
+
+90
+00:07:32,420 --> 00:07:38,780
+"evet" dedi. Ve grafik neredeyse anında
+dikey gitti. Sonra Şubat'ta
+
+91
+00:07:38,780 --> 00:07:44,520
+dışarıya açtık. İnsanların pek hatırlamadığı
+bir şey var: Claude Code başta
+
+92
+00:07:44,520 --> 00:07:49,820
+hit değildi. Yayınladığımızda bir sürü
+kullanıcı geldi, hemen alan bir sürü
+
+93
+00:07:49,820 --> 00:07:54,520
+early adopter vardı. Ama herkesin bu şeyin
+ne olduğunu anlaması aylar aldı.
+
+94
+00:07:55,180 --> 00:08:00,200
+Yine, çok farklı bir şey çünkü.
+Düşününce, Claude Code'un çalışmasının
+
+95
+00:08:00,200 --> 00:08:05,520
+bir sebebi latent demand fikri: tool'u
+insanların olduğu yere getiriyoruz ve
+
+96
+00:08:05,520 --> 00:08:09,700
+mevcut workflow'ları biraz kolaylaştırıyor.
+Ama aynı zamanda terminal'de olduğu için
+
+97
+00:08:09,700 --> 00:08:13,400
+biraz şaşırtıcı. Bu anlamda biraz uzaylı.
+Yani açık fikirli olman
+
+98
+00:08:13,500 --> 00:08:18,360
+ve kullanmayı öğrenmen gerekiyor.
+Tabii artık Claude Code
+
+99
+00:08:18,360 --> 00:08:22,960
+iOS ve Android Claude uygulamasında var.
+Desktop'ta ve web sitesinde de var.
+
+100
+00:08:22,960 --> 00:08:27,720
+IDE eklentisi olarak var, Slack'te,
+GitHub'da, mühendislerin olduğu yerlerde
+
+101
+00:08:27,720 --> 00:08:30,480
+var, biraz daha tanıdık. Ama başlangıç
+noktası bu değildi.
+
+102
+00:08:31,980 --> 00:08:36,620
+Yani başta bu şeyin işe yarar olması bile
+bir sürprizdi.
+
+103
+00:08:37,660 --> 00:08:43,740
+Ekip büyüdükçe, ürün büyüdükçe,
+insanlar için daha faydalı hale geldikçe,
+
+104
+00:08:43,740 --> 00:08:48,280
+dünyanın her yerinden insanlar, küçük
+startup'lardan en büyük şirketlere kadar
+
+105
+00:08:48,280 --> 00:08:54,480
+kullanmaya başladı ve geri bildirim vermeye
+başladılar. Geriye dönüp bakınca çok
+
+106
+00:08:54,480 --> 00:09:00,060
+alçakgönüllü kılan bir deneyim oldu. Çünkü
+kullanıcılardan öğrenmeye devam ediyoruz.
+
+107
+00:09:00,060 --> 00:09:04,380
+En heyecan verici şey de şu: hiçbirimiz
+ne yaptığımızı gerçekten bilmiyoruz.
+
+108
+00:09:04,380 --> 00:09:09,260
+Herkesle birlikte çözmeye çalışıyoruz.
+Bunun için en iyi sinyal de kullanıcı geri
+
+109
+00:09:09,260 --> 00:09:11,820
+bildirimi. En iyisi bu oldu.
+Defalarca şaşırdım.

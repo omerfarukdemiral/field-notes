@@ -1,0 +1,399 @@
+1
+00:00:00,000 --> 00:00:04,980
+Claude Code şu anda dünyada en çok konuşulan
+geliştirici araçlarından biri oldu.
+
+2
+00:00:05,600 --> 00:00:09,620
+Her yerde mühendisler onun sayesinde yazılımı
+nasıl geliştirdiklerini yeniden düşünüyor.
+
+3
+00:00:10,060 --> 00:00:16,420
+Bugün yanımda, Claude Code'un arkasındaki şirket
+Anthropic'ten Lydia Hallie var.
+
+4
+00:00:16,680 --> 00:00:19,400
+Onu internette Avocoder olarak da tanıyor
+olabilirsiniz.
+
+5
+00:00:19,900 --> 00:00:24,700
+Claude Code gerçekte nasıl çalışıyor ve nereye
+gidiyor, perdeyi aralamak için burada.
+
+6
+00:00:25,000 --> 00:00:33,700
+Ayrıca CS Dojo'nun kurucusu YK Sugi de burada.
+Kendisi Claude Code Tips Repository'nin de yazarı.
+
+7
+00:00:33,960 --> 00:00:39,100
+Bu repo, Claude Code'da ustalaşmak için en popüler
+topluluk kaynaklarından biri.
+
+8
+00:00:39,540 --> 00:00:44,660
+Yani Claude Code'dan daha iyi sonuç almayı
+araştırdıysanız, muhtemelen onun işine denk geldiniz.
+
+9
+00:00:45,300 --> 00:00:47,060
+Agent Factory'ye hoş geldiniz, ikiniz de.
+
+10
+00:00:47,420 --> 00:00:50,500
+Başlamadan önce, ikinize de kısa bir soru.
+
+11
+00:00:50,500 --> 00:00:56,260
+Claude Code'la ilgili geliştiricilerin tamamen
+kaçırdığı tek şey ne?
+
+12
+00:00:57,820 --> 00:00:59,120
+Ben auto mode derim.
+
+13
+00:00:59,560 --> 00:01:01,220
+Yani epey yeni, o yüzden anlıyorum.
+
+14
+00:01:01,400 --> 00:01:07,000
+Ama auto mode'u workflow'larında kullanmak — bugün
+biraz daha konuşacağız — çok şeyin önünü açıyor.
+
+15
+00:01:07,580 --> 00:01:13,440
+YK, senin Claude Code Tips Repository'nin 8 binden
+fazla yıldızı var, değil mi?
+
+16
+00:01:13,520 --> 00:01:15,960
+Ve hakkındaki paylaşımlar viral olmaya devam ediyor.
+
+17
+00:01:16,080 --> 00:01:20,700
+Peki Claude Code'da senin için gerçekten taşların
+yerine oturduğu an neydi?
+
+18
+00:01:20,940 --> 00:01:24,580
+Ve seni bu ipuçlarını başkaları için belgelemeye
+iten şey neydi?
+
+19
+00:01:24,900 --> 00:01:26,500
+Benim için hemen oturdu.
+
+20
+00:01:26,700 --> 00:01:31,460
+Claude Code'u çıktığı anda kullanmaya başladığımı
+hatırlıyorum.
+
+21
+00:01:32,180 --> 00:01:34,340
+Bununla ilgili kısa bir hikâye anlatayım.
+
+22
+00:01:34,840 --> 00:01:39,420
+Şu anki işim için Daft'ta mülakat sürecinden
+geçiyordum.
+
+23
+00:01:40,200 --> 00:01:44,700
+Ve o iş mülakatı için bir demo proje geliştirdim.
+
+24
+00:01:45,200 --> 00:01:47,060
+Claude Code kullandığımı onlara söylemedim.
+
+25
+00:01:47,480 --> 00:01:49,300
+Ama kaliteye çok şaşırdılar.
+
+26
+00:01:50,200 --> 00:01:52,840
+Yani daha o zaman bile çok büyük bir potansiyel
+vardı bence.
+
+27
+00:01:53,020 --> 00:01:54,440
+Ben de kullanmaya devam ettim.
+
+28
+00:01:54,520 --> 00:01:55,140
+Öğrenmeye devam ettim.
+
+29
+00:01:55,200 --> 00:01:56,520
+Öğrendiklerimi paylaşmaya devam ettim.
+
+30
+00:01:57,380 --> 00:02:04,260
+Lydia, Anthropic tarafından bakınca, topluluğun
+Claude Code'la yaptıklarını izlemek nasıl bir his?
+
+31
+00:02:04,440 --> 00:02:14,760
+YK gibi birinin bu workflow'ları kurup büyük ölçekte
+paylaştığını görünce, bu ekibin ürüne bakışına nasıl
+geri besleme yapıyor?
+
+32
+00:02:15,160 --> 00:02:23,660
+İşimin çoğu, YK gibi power user'ların Claude Code'u
+nasıl kullandığını izlemek diyebilirim.
+
+33
+00:02:23,880 --> 00:02:25,880
+Herkes birazcık farklı kullanıyor gibi geliyor.
+
+34
+00:02:26,300 --> 00:02:29,340
+İçeride nasıl kullandığımız, dışarıda insanların
+kullandığı şekil olmayabilir.
+
+35
+00:02:29,580 --> 00:02:33,100
+Buradaki Claude Code ekibindeki tüm mühendisler
+bile, hepimiz farklı kullanıyoruz.
+
+36
+00:02:33,880 --> 00:02:35,680
+Yani bu bizim için son derece önemli.
+
+37
+00:02:35,740 --> 00:02:39,820
+Bu feedback'i almak ve topluluktan gelen bu
+pattern'leri görmek bizi gerçekten mutlu ediyor.
+
+38
+00:02:39,820 --> 00:02:46,220
+Çünkü roadmap'imizi şekillendiriyor; neyin eksik
+olduğunu, hangi özellikleri eklememiz ya da
+iyileştirmemiz gerektiğini gösteriyor.
+
+39
+00:02:46,560 --> 00:02:52,020
+Bugünlerde intent-driven development terimini epey
+sık duyuyoruz.
+
+40
+00:02:52,160 --> 00:02:58,400
+Fikir şu: Claude'a nasıl geliştireceğini değil, ne
+geliştirmesini istediğini söylüyorsun.
+
+41
+00:02:59,260 --> 00:03:02,380
+Peki YK, sende bu değişimi ne yarattı?
+
+42
+00:03:02,440 --> 00:03:04,900
+Ve seni bunu paylaşmaya iten neydi?
+
+43
+00:03:05,140 --> 00:03:07,760
+Öncelikle, bunun için birçok farklı terim var.
+
+44
+00:03:07,800 --> 00:03:13,660
+Ama ben şahsen bu terimi seviyorum, çünkü bana göre
+mesele tam olarak prompt değil.
+
+45
+00:03:14,240 --> 00:03:17,100
+İnsanlar bazen "şu prompt'u kullan, daha iyi sonuç
+alırsın" diyor.
+
+46
+00:03:17,560 --> 00:03:18,060
+Tabii, olabilir.
+
+47
+00:03:18,660 --> 00:03:25,600
+Ama bana göre mesele daha çok intent'inin tam olarak
+ne olduğunu bilmek ve onu ifade edebilmek; ne
+geliştirmek istediğini.
+
+48
+00:03:26,200 --> 00:03:27,700
+Ve sonra da bunu ifade edebilmek.
+
+49
+00:03:27,700 --> 00:03:33,260
+O yüzden önerdiğim şeylerden biri, ellerinle yazmak
+yerine sesinle yazmak.
+
+50
+00:03:34,200 --> 00:03:40,840
+Bunun daha iyi olduğu bir nokta da şu: intent'ini
+daha hızlı ifade edebiliyorsun.
+
+51
+00:03:41,020 --> 00:03:41,880
+Hata yapabilirsin.
+
+52
+00:03:41,940 --> 00:03:45,100
+"Ee" diyebilirsin ama ifade edebildiğin sürece fark
+etmiyor.
+
+53
+00:03:46,140 --> 00:03:46,540
+Evet.
+
+54
+00:03:46,660 --> 00:03:48,360
+Lydia, senin de bu konudaki görüşünü merak ediyorum.
+
+55
+00:03:48,500 --> 00:03:52,940
+Anthropic, geliştiricilerin Claude Code'la nasıl
+çalışması gerektiğini düşünürken,
+
+56
+00:03:53,460 --> 00:03:57,820
+intent-driven development ekibin tasarladığı şeyle
+örtüşüyor mu?
+
+57
+00:03:57,940 --> 00:04:02,840
+Ve topluluğun bu yöne kaydığını görmek nasıl bir his?
+
+58
+00:04:03,580 --> 00:04:06,040
+Evet, intent-driven development terimini seviyorum.
+
+59
+00:04:06,260 --> 00:04:12,640
+İçeride, Claude'un verification'a ihtiyacı olduğunu
+insanlara anlatmaya çok odaklanıyoruz.
+
+60
+00:04:13,080 --> 00:04:13,200
+Değil mi.
+
+61
+00:04:13,240 --> 00:04:15,040
+Bence bu da intent'in bir parçası.
+
+62
+00:04:15,160 --> 00:04:17,720
+Bir kısmı prompt'unu nasıl kurduğunla ilgili.
+
+63
+00:04:17,940 --> 00:04:22,320
+Yazılım mühendisliği geçmişinin olması hâlâ
+prompt'larını iyileştiriyor bence.
+
+64
+00:04:22,320 --> 00:04:25,720
+Claude'a gerçekte ne yapmasını istediğini çok daha
+iyi anlatabiliyorsun.
+
+65
+00:04:26,880 --> 00:04:32,300
+Bu durumda plan mode kullanmak, verification olarak
+görsel eklemek — bence bunlar intent'in bir parçası.
+
+66
+00:04:32,960 --> 00:04:35,280
+Bu arada voice mode'u da hâlâ denemem lazım.
+
+67
+00:04:35,380 --> 00:04:36,180
+Çok eğlenceli görünüyor.
+
+68
+00:04:36,260 --> 00:04:40,140
+Kafamın içinde bu kadar kalmasam muhtemelen çok daha
+iyi prompt yazarım.
+
+69
+00:04:40,240 --> 00:04:44,240
+Çünkü prompt yazarken fark ediyorum, "ya belki bunu
+sormamalıyım" diyorum.
+
+70
+00:04:44,320 --> 00:04:45,340
+"Belki başka bir şey yapmalıyım."
+
+71
+00:04:45,420 --> 00:04:48,360
+Ama sesli sesli beyin fırtınası yapmak gerçekten çok
+keyifli olabilir.
+
+72
+00:04:48,440 --> 00:04:49,160
+Hâlâ denemem lazım.
+
+73
+00:04:50,200 --> 00:04:56,340
+Ama evet, bu bir pattern gösteriyor: insanların bir
+fikri olduğu anda Claude Code'u kullanmasını istiyoruz.
+
+74
+00:04:57,040 --> 00:05:05,180
+Ve fikrinden gerçekten deploy edilmiş bir siteye
+giden yoldaki sürtünmeyi olabildiğince küçük, mümkün
+olduğunca kolay hale getirmek istiyoruz.
+
+75
+00:05:06,340 --> 00:05:08,900
+Yani evet, bu da harika bir topluluk feedback'i.
+
+76
+00:05:09,140 --> 00:05:11,140
+Bu tür pattern'lere daha çok odaklanabiliriz.
+
+77
+00:05:11,140 --> 00:05:14,160
+"Hey, ilham geldiği anda Claude Code'u
+kullanabilirsin" gibi.
+
+78
+00:05:14,540 --> 00:05:15,340
+Sadece konuş onunla.
+
+79
+00:05:15,860 --> 00:05:20,180
+Beyin fırtınası yap, belki plan mode'da, ve siteni
+hızlıca deploy et.
+
+80
+00:05:20,620 --> 00:05:21,020
+Bayıldım buna.
+
+81
+00:05:21,260 --> 00:05:29,620
+Ben de voice mode kullanmayı çok seviyorum, çünkü
+konuşurken yazdığımdan çok daha hızlıyım.
+
+82
+00:05:29,860 --> 00:05:31,860
+Ne kadar yavaş yazdığıma sinir oluyorum.
+
+83
+00:05:32,000 --> 00:05:33,120
+Ben de voice mode'a geçiyorum.
+
+84
+00:05:34,380 --> 00:05:40,000
+Bence asıl heyecan verici olan şu: Claude Code
+sadece tek kişilik bir geliştirici aracı değil.
+
+85
+00:05:40,000 --> 00:05:42,860
+Enterprise ölçeğinde de kullanılıyor.
+
+86
+00:05:43,440 --> 00:05:47,760
+Yani Claude Code'u artık Google Cloud agent
+platform'da da çalıştırabiliyorsun.
+
+87
+00:05:48,500 --> 00:05:56,240
+Yani sadece denemekten çıkıp bunu ekibine yaymaya
+hazır olduğunda, platform zaten orada.

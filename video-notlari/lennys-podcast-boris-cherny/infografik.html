@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>claude code kesitleri — blueprint.dark</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* blueprint.dark token'ları — DEĞİŞTİRME */
+:root {
+  --bg:#0B0A12; --grid:#161426; --ink:#CDCBE0; --accent:#A78BFA;
+  --accent-fill:#151028; --line:#2C2946; --muted:#625F80; --div:#201D38; --code:#08070E;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#333; font-family:'Space Grotesk',sans-serif; color:var(--ink); }
+.canvas {
+  background:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:16px 16px;
+  position:relative; overflow:hidden; margin:20px auto;
+}
+.r169 { width:1200px; height:675px; padding:64px; }
+.r11  { width:1080px; height:1080px; padding:64px; }
+.r45  { width:1080px; height:1350px; padding:64px; }
+.mono { font-family:'IBM Plex Mono',monospace; }
+.serial { font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:4px; color:var(--accent); }
+.handle { font-family:'IBM Plex Mono',monospace; font-size:16px; color:var(--muted); letter-spacing:1px; }
+.h1 { font-size:48px; font-weight:700; line-height:1.15; color:var(--ink); }
+.sub { font-family:'IBM Plex Mono',monospace; font-size:24px; color:var(--accent); }
+.note { font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--muted); }
+.topbar { display:flex; justify-content:space-between; align-items:baseline; }
+.botbar { border-top:1px solid var(--div); padding-top:16px; display:flex; justify-content:space-between; align-items:center; }
+.metric-n { font-family:'IBM Plex Mono',monospace; font-size:30px; font-weight:500; color:var(--accent); margin-right:10px; }
+.metric-l { font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--muted); }
+.big { font-size:180px; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-2px; }
+.ctx { font-size:38px; font-weight:500; margin-top:28px; line-height:1.35; }
+</style>
+</head>
+<body>
+
+<!-- 01 · METRİK · bölüm 01 -->
+<section class="canvas r11" style="display:flex; flex-direction:column;">
+  <div class="topbar">
+    <span class="serial">KESİT / 01</span>
+    <span class="handle">00:00–09:11 · @omerfrkdemiral</span>
+  </div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <div class="big">%4</div>
+    <div class="ctx">dünyadaki tüm public github<br>commit'ini artık claude code yazıyor</div>
+    <div class="note" style="margin-top:26px; line-height:1.7;">yıl sonu tahmini 1/5 · private repo'lar bu sayının dışında<br>kaynak: semianalysis raporu, podcast'te aktarıldı</div>
+  </div>
+  <div class="botbar">
+    <span class="note">asıl mesele rakam değil: büyüme hâlâ hızlanıyor</span>
+    <span class="note" style="font-size:15px;">blueprint.dark</span>
+  </div>
+</section>
+
+<!-- 02 · METRİK · bölüm 01 -->
+<section class="canvas r11" style="display:flex; flex-direction:column;">
+  <div class="topbar">
+    <span class="serial">KESİT / 02</span>
+    <span class="handle">~05:00 · @omerfrkdemiral</span>
+  </div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <div class="big">2</div>
+    <div class="ctx">claude code'u içeride duyurduğu<br>post'un aldığı like sayısı</div>
+    <div class="note" style="margin-top:26px; line-height:1.7;">içeride "coding tool" denince herkes ide düşünüyordu<br>terminalde yazdı çünkü ilk birkaç ay tek kullanıcı kendisiydi</div>
+  </div>
+  <div class="botbar">
+    <span class="note">ürün dersi: başlangıçta işleri biraz underfund et</span>
+    <span class="note" style="font-size:15px;">blueprint.dark</span>
+  </div>
+</section>
+
+<!-- 03 · SÜREÇ ŞERİDİ · bölüm 02 -->
+<section class="canvas r169">
+  <div class="topbar" style="margin-bottom:40px;">
+    <div class="h1" style="font-size:42px;">tahmin değildi,<br>sadece çizgiyi uzattı</div>
+    <span class="handle" style="text-align:right;">KESİT / 03 · 09:11–18:07<br>@omerfrkdemiral</span>
+  </div>
+  <svg viewBox="0 0 1072 300" style="width:100%;">
+    <line x1="60" y1="100" x2="1012" y2="100" stroke="#2C2946" stroke-width="3"/>
+    <circle cx="130" cy="100" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+    <circle cx="420" cy="100" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+    <circle cx="710" cy="100" r="14" fill="#151028" stroke="#A78BFA" stroke-width="4"/>
+    <circle cx="960" cy="100" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+    <text x="130" y="55" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="22">mayıs '25</text>
+    <text x="420" y="55" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="22">opus 4</text>
+    <text x="710" y="45" text-anchor="middle" fill="#A78BFA" font-family="IBM Plex Mono" font-size="24">kasım '25</text>
+    <text x="960" y="55" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="22">bugün</text>
+    <text x="130" y="148" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">tahmin: ide'ye</text>
+    <text x="130" y="172" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">gerek kalmayacak</text>
+    <text x="420" y="148" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">ilk sert kırılma</text>
+    <text x="420" y="172" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">büyüme exponential</text>
+    <text x="710" y="152" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">kodun %100'ü</text>
+    <text x="960" y="148" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">sektöre yayılıyor</text>
+    <path d="M 780 200 C 870 258, 550 258, 640 200" fill="none" stroke="#A78BFA" stroke-width="2.5" stroke-dasharray="8 6"/>
+    <text x="710" y="290" text-anchor="middle" fill="#A78BFA" font-family="IBM Plex Mono" font-size="19">eğriyi her ay yeniden uzat</text>
+  </svg>
+  <div class="botbar" style="position:absolute; left:64px; right:64px; bottom:48px;">
+    <span class="note">salon şok olmuştu; sezgiye uymuyordu ama eğri zaten oraya gidiyordu</span>
+    <span class="note" style="font-size:15px;">kurucuların üçü scaling laws yazarı</span>
+  </div>
+</section>
+
+<!-- 04 · METRİK · bölüm 02 -->
+<section class="canvas r11" style="display:flex; flex-direction:column;">
+  <div class="topbar">
+    <span class="serial">KESİT / 04</span>
+    <span class="handle">~13:00 · @omerfrkdemiral</span>
+  </div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <div class="big">%100</div>
+    <div class="ctx">kodunun tamamını claude code yazıyor.<br>kasım'dan beri elle tek satır düzenlemedi.</div>
+    <div class="note" style="margin-top:26px; line-height:1.7;">günde 10–30 pull request ship ediyor<br>anthropic'te pr'ların %100'ünü claude review ediyor</div>
+  </div>
+  <div class="botbar">
+    <span class="note">insan review katmanı hâlâ duruyor</span>
+    <span class="note" style="font-size:15px;">blueprint.dark</span>
+  </div>
+</section>
+
+<!-- 05 · METRİK · bölüm 02 -->
+<section class="canvas r11" style="display:flex; flex-direction:column;">
+  <div class="topbar">
+    <span class="serial">KESİT / 05</span>
+    <span class="handle">~16:30 · @omerfrkdemiral</span>
+  </div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <div class="big">+%200</div>
+    <div class="ctx">mühendis başına pull request<br>verimliliği, bir yılda</div>
+    <div class="note" style="margin-top:26px; line-height:1.7;">aynı dönemde anthropic mühendislik ekibi 4x büyüdü<br>referans: meta'da yüzlerce mühendisin yıllık işi birkaç puan kazandırıyordu</div>
+  </div>
+  <div class="botbar">
+    <span class="note">boris eskiden meta'nın kod kalitesinden sorumluydu</span>
+    <span class="note" style="font-size:15px;">blueprint.dark</span>
+  </div>
+</section>
+
+<!-- 06 · KARŞILAŞTIRMA · bölüm 03 -->
+<section class="canvas r169" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="margin-bottom:28px;">
+    <div class="h1" style="font-size:42px;">kaynak bolluğu vs underfunding</div>
+    <span class="handle" style="text-align:right;">KESİT / 06 · 18:07–23:40<br>@omerfrkdemiral</span>
+  </div>
+  <div style="display:flex; gap:24px; flex:1;">
+    <div style="flex:1; border:2px dashed var(--muted); border-radius:6px; padding:28px;">
+      <div class="mono" style="font-size:22px; color:var(--muted); letter-spacing:2px; margin-bottom:20px;">A — bol kaynak</div>
+      <div class="mono" style="font-size:20px; line-height:1.9;">→ projeye geniş ekip<br>→ zaman koordinasyona gider<br>→ iş insanlar arasında bölünür<br>→ eski alışkanlık korunur</div>
+    </div>
+    <div style="flex:1; border:2.5px solid var(--accent); background:var(--accent-fill); border-radius:6px; padding:28px;">
+      <div class="mono" style="font-size:22px; color:var(--accent); letter-spacing:2px; margin-bottom:20px;">B — underfunding</div>
+      <div class="mono" style="font-size:20px; line-height:1.9;">→ projeye tek mühendis<br>→ hız içten gelen motivasyon<br>→ iş zorunlu olarak claude'a devredilir<br>→ bugün yapabiliyorsan bugün yap</div>
+    </div>
+  </div>
+  <div class="botbar" style="margin-top:24px;">
+    <span class="note">not: b tek başına çalışmaz — harika mühendis, yetki ve bol token gerekiyor.</span>
+    <span class="note" style="font-size:15px;">"bir şeyi yapmaktan iyisi: claude'a yaptırmak"</span>
+  </div>
+</section>
+
+<!-- 07 · SÜZGEÇ · bölüm 03 -->
+<section class="canvas r45" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="border-bottom:2px solid var(--line); padding-bottom:20px;">
+    <span class="serial">KESİT / 07</span>
+    <span class="handle">18:07–23:40 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="margin-top:36px;">token'da cömert ol,<br>maliyeti sonra konuş</div>
+  <div class="note" style="margin-top:12px;">ctio'lara verdiği standart tavsiye, üç adımda.</div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:space-evenly; margin-top:20px;">
+    <div style="border-top:1px solid var(--div); padding-top:24px; display:flex; gap:24px;">
+      <span class="mono" style="color:var(--accent); font-size:26px;">01</span>
+      <div>
+        <div style="font-size:30px; font-weight:500;">önce mühendise sınırsız token</div>
+        <div class="note" style="margin-top:8px; line-height:1.6;">çılgın gelen fikirleri denemekte özgür kalsınlar diye.<br>bazı şirketlerde artık bir yan hak.</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--div); padding-top:24px; display:flex; gap:24px;">
+      <span class="mono" style="color:var(--accent); font-size:26px;">02</span>
+      <div>
+        <div style="font-size:30px; font-weight:500;">optimizasyon fikir tuttuktan sonra</div>
+        <div class="note" style="margin-top:8px; line-height:1.6;">opus yerine sonnet/haiku sorusu burada sorulur.<br>başta değil.</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--div); padding-top:24px; display:flex; gap:24px;">
+      <span class="mono" style="color:var(--accent); font-size:26px;">03</span>
+      <div>
+        <div style="font-size:30px; font-weight:500;">maliyet ancak ölçekte konuşulur</div>
+        <div class="note" style="margin-top:8px; line-height:1.6;">tek mühendisin token faturası maaşının yanında küçük.<br>anthropic'te aylık yüz binlerce dolar harcayanlar var.</div>
+      </div>
+    </div>
+  </div>
+  <div class="botbar">
+    <span class="note">erken optimizasyon burada da erken optimizasyon</span>
+    <span class="note" style="font-size:15px;">blueprint.dark</span>
+  </div>
+</section>
+
+<!-- 08 · SÜREÇ ŞERİDİ · bölüm 04 -->
+<section class="canvas r169">
+  <div class="topbar" style="margin-bottom:40px;">
+    <div class="h1" style="font-size:42px;">tarihsel karşılığı<br>matbaa</div>
+    <span class="handle" style="text-align:right;">KESİT / 08 · 23:40–31:44<br>@omerfrkdemiral</span>
+  </div>
+  <svg viewBox="0 0 1072 300" style="width:100%;">
+    <line x1="60" y1="100" x2="1012" y2="100" stroke="#2C2946" stroke-width="3"/>
+    <circle cx="130" cy="100" r="14" fill="#151028" stroke="#A78BFA" stroke-width="4"/>
+    <circle cx="420" cy="100" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+    <circle cx="710" cy="100" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+    <circle cx="960" cy="100" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+    <text x="130" y="45" text-anchor="middle" fill="#A78BFA" font-family="IBM Plex Mono" font-size="24">1440'lar</text>
+    <text x="420" y="55" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="22">+50 yıl</text>
+    <text x="710" y="55" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="22">+50 yıl</text>
+    <text x="960" y="55" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="22">+200 yıl</text>
+    <text x="130" y="152" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">matbaa · okuryazarlık %1</text>
+    <text x="420" y="148" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">basılan materyal önceki</text>
+    <text x="420" y="172" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">1000 yılı geçti</text>
+    <text x="710" y="148" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">maliyet 100x düştü</text>
+    <text x="960" y="148" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">okuryazarlık %70</text>
+    <text x="60" y="250" fill="#625F80" font-family="IBM Plex Mono" font-size="18">hacim ve maliyet anında değişti — insan tarafı 200 yıl aldı.</text>
+  </svg>
+  <div class="botbar" style="position:absolute; left:64px; right:64px; bottom:48px;">
+    <span class="note">1400'lerde bir müstensih: "sevmediğim şey kopyalamaktı. vaktim boşaldığı için memnunum."</span>
+  </div>
+</section>
+
+<!-- 09 · ŞEMA · bölüm 05 -->
+<section class="canvas r169">
+  <div class="topbar">
+    <div class="h1">unvanlar bulanıklaşıyor<br>yerine builder geliyor</div>
+    <span class="handle" style="text-align:right;">KESİT / 09 · 31:44–39:10<br>@omerfrkdemiral</span>
+  </div>
+  <svg viewBox="0 0 1072 380" style="width:100%; margin-top:24px;">
+    <rect x="416" y="10" width="240" height="80" fill="#151028" stroke="#A78BFA" stroke-width="2" rx="3"/>
+    <text x="536" y="45" text-anchor="middle" fill="#A78BFA" font-family="IBM Plex Mono" font-size="22">builder</text>
+    <text x="536" y="72" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">hepsi kod yazıyor</text>
+    <line x1="536" y1="90" x2="536" y2="140" stroke="#2C2946" stroke-width="2"/>
+    <line x1="180" y1="140" x2="892" y2="140" stroke="#2C2946" stroke-width="2"/>
+    <line x1="180" y1="140" x2="180" y2="180" stroke="#2C2946" stroke-width="2"/>
+    <line x1="536" y1="140" x2="536" y2="180" stroke="#2C2946" stroke-width="2"/>
+    <line x1="892" y1="140" x2="892" y2="180" stroke="#2C2946" stroke-width="2"/>
+    <rect x="70" y="180" width="220" height="76" fill="none" stroke="#CDCBE0" stroke-width="1.5" rx="3" stroke-dasharray="7 5"/>
+    <text x="180" y="213" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="20">mühendis</text>
+    <text x="180" y="240" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">ürün + altyapı</text>
+    <rect x="426" y="180" width="220" height="76" fill="none" stroke="#CDCBE0" stroke-width="1.5" rx="3" stroke-dasharray="7 5"/>
+    <text x="536" y="213" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="20">tasarımcı</text>
+    <text x="536" y="240" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">kendi önünü açıyor</text>
+    <rect x="782" y="180" width="220" height="76" fill="none" stroke="#CDCBE0" stroke-width="1.5" rx="3" stroke-dasharray="7 5"/>
+    <text x="892" y="213" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="20">pm · data</text>
+    <text x="892" y="240" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">koordinasyon + kod</text>
+    <text x="70" y="330" fill="#625F80" font-family="IBM Plex Mono" font-size="17">kesikli = bugün hâlâ ayrı duran roller</text>
+  </svg>
+  <div class="botbar" style="position:absolute; left:64px; right:64px; bottom:48px;">
+    <div style="display:flex; gap:40px;">
+      <div><span class="metric-n">%50</span> <span class="metric-l">roller şimdiden örtüşüyor</span></div>
+    </div>
+    <span class="note">claude code ekibinde herkes kod yazıyor</span>
+  </div>
+</section>
+
+<!-- 10 · ŞEMA · bölüm 06 -->
+<section class="canvas r169">
+  <div class="topbar">
+    <div class="h1">latent demand:<br>kötüye kullanımı takip et</div>
+    <span class="handle" style="text-align:right;">KESİT / 10 · 40:21–47:42<br>@omerfrkdemiral</span>
+  </div>
+  <svg viewBox="0 0 1072 380" style="width:100%; margin-top:24px;">
+    <rect x="386" y="10" width="300" height="80" fill="#151028" stroke="#A78BFA" stroke-width="2" rx="3"/>
+    <text x="536" y="45" text-anchor="middle" fill="#A78BFA" font-family="IBM Plex Mono" font-size="22">tasarlanmamış kullanım</text>
+    <text x="536" y="72" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="17">sinyal burada</text>
+    <line x1="536" y1="90" x2="536" y2="140" stroke="#2C2946" stroke-width="2"/>
+    <line x1="180" y1="140" x2="892" y2="140" stroke="#2C2946" stroke-width="2"/>
+    <line x1="180" y1="140" x2="180" y2="180" stroke="#2C2946" stroke-width="2"/>
+    <line x1="536" y1="140" x2="536" y2="180" stroke="#2C2946" stroke-width="2"/>
+    <line x1="892" y1="140" x2="892" y2="180" stroke="#2C2946" stroke-width="2"/>
+    <rect x="70" y="180" width="220" height="90" fill="none" stroke="#CDCBE0" stroke-width="1.5" rx="3" stroke-dasharray="7 5"/>
+    <text x="180" y="212" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="19">fb grupları</text>
+    <text x="180" y="238" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">%40 alım-satımdı</text>
+    <text x="180" y="260" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">→ marketplace</text>
+    <rect x="426" y="180" width="220" height="90" fill="none" stroke="#CDCBE0" stroke-width="1.5" rx="3" stroke-dasharray="7 5"/>
+    <text x="536" y="212" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="19">profil bakışları</text>
+    <text x="536" y="238" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">%60 arkadaş değildi</text>
+    <text x="536" y="260" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">→ dating</text>
+    <rect x="782" y="180" width="220" height="90" fill="none" stroke="#CDCBE0" stroke-width="1.5" rx="3" stroke-dasharray="7 5"/>
+    <text x="892" y="212" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="19">terminalde sql</text>
+    <text x="892" y="238" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">data scientist'ler</text>
+    <text x="892" y="260" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">→ cowork</text>
+    <text x="70" y="340" fill="#625F80" font-family="IBM Plex Mono" font-size="17">kesikli = ürünün tasarlanmadığı davranış</text>
+  </svg>
+  <div class="botbar" style="position:absolute; left:64px; right:64px; bottom:48px;">
+    <span class="note">modern versiyonu: kullanıcının değil, modelin ne yapmaya çalıştığına bak</span>
+    <span class="note" style="font-size:15px;">"üründeki en önemli tek prensip"</span>
+  </div>
+</section>
+
+<!-- 11 · ŞEMA · bölüm 07 -->
+<section class="canvas r169">
+  <div class="topbar">
+    <div class="h1">safety üç katmanda<br>çalışılıyor</div>
+    <span class="handle" style="text-align:right;">KESİT / 11 · 47:42–55:32<br>@omerfrkdemiral</span>
+  </div>
+  <svg viewBox="0 0 1072 380" style="width:100%; margin-top:36px;">
+    <rect x="40" y="60" width="290" height="110" fill="none" stroke="#CDCBE0" stroke-width="1.5" rx="3"/>
+    <text x="66" y="98" fill="#625F80" font-family="IBM Plex Mono" font-size="17">01</text>
+    <text x="66" y="130" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="21">mech interp</text>
+    <text x="66" y="156" fill="#625F80" font-family="IBM Plex Mono" font-size="16">nöron seviyesinde izleme</text>
+    <line x1="330" y1="115" x2="391" y2="115" stroke="#2C2946" stroke-width="2"/>
+    <path d="M 383 109 L 393 115 L 383 121" fill="none" stroke="#2C2946" stroke-width="2"/>
+    <rect x="393" y="60" width="290" height="110" fill="none" stroke="#CDCBE0" stroke-width="1.5" rx="3"/>
+    <text x="419" y="98" fill="#625F80" font-family="IBM Plex Mono" font-size="17">02</text>
+    <text x="419" y="130" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="21">evals</text>
+    <text x="419" y="156" fill="#625F80" font-family="IBM Plex Mono" font-size="16">petri kabı · sentetik test</text>
+    <line x1="683" y1="115" x2="744" y2="115" stroke="#2C2946" stroke-width="2"/>
+    <path d="M 736 109 L 746 115 L 736 121" fill="none" stroke="#2C2946" stroke-width="2"/>
+    <rect x="746" y="60" width="290" height="110" fill="#151028" stroke="#A78BFA" stroke-width="2" rx="3"/>
+    <text x="772" y="98" fill="#A78BFA" font-family="IBM Plex Mono" font-size="17">03</text>
+    <text x="772" y="130" fill="#A78BFA" font-family="IBM Plex Mono" font-size="21">vahşi doğa</text>
+    <text x="772" y="156" fill="#625F80" font-family="IBM Plex Mono" font-size="16">gerçek kullanım · erken çıkış</text>
+    <text x="40" y="235" fill="#625F80" font-family="IBM Plex Mono" font-size="18">model ilk iki katmanda mükemmel görünüp üçüncüde bozulabilir.</text>
+    <text x="40" y="265" fill="#625F80" font-family="IBM Plex Mono" font-size="18">ürünlerin kasten erken çıkmasının sebebi bu.</text>
+  </svg>
+  <div class="botbar" style="position:absolute; left:64px; right:64px; bottom:48px;">
+    <div style="display:flex; gap:40px;">
+      <div><span class="metric-n">4-5 ay</span> <span class="metric-l">claude code sadece içeride kullanıldı</span></div>
+    </div>
+    <span class="note">cowork'e "research preview" denmesinin sebebi</span>
+  </div>
+</section>
+
+<!-- 12 · METRİK · bölüm 07 -->
+<section class="canvas r11" style="display:flex; flex-direction:column;">
+  <div class="topbar">
+    <span class="serial">KESİT / 12</span>
+    <span class="handle">~47:42 · @omerfrkdemiral</span>
+  </div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <div class="big">10 gün</div>
+    <div class="ctx">cowork'ün sıfırdan çıkışa kadar<br>geçen süresi</div>
+    <div class="note" style="margin-top:26px; line-height:1.7;">içindeki sanal makine ve güvenlik korkulukları dahil<br>tamamını claude code yazdı</div>
+  </div>
+  <div class="botbar">
+    <span class="note">ekibin tek sorusu: mühendis olmayan için nasıl daha safe olur</span>
+    <span class="note" style="font-size:15px;">blueprint.dark</span>
+  </div>
+</section>
+
+<!-- 13 · KARŞILAŞTIRMA · bölüm 08 -->
+<section class="canvas r169" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="margin-bottom:28px;">
+    <div class="h1" style="font-size:42px;">modeli kutuya sokmak vs<br>tool verip bırakmak</div>
+    <span class="handle" style="text-align:right;">KESİT / 13 · 55:32–01:04:25<br>@omerfrkdemiral</span>
+  </div>
+  <div style="display:flex; gap:24px; flex:1;">
+    <div style="flex:1; border:2px dashed var(--muted); border-radius:6px; padding:28px;">
+      <div class="mono" style="font-size:22px; color:var(--muted); letter-spacing:2px; margin-bottom:20px;">A — orchestrator</div>
+      <div class="mono" style="font-size:20px; line-height:1.9;">→ adım 1, adım 2, adım 3 dayat<br>→ context'i önden kürasyonla<br>→ fine-tune, küçük modeller<br>→ kazanç: %10–20</div>
+    </div>
+    <div style="flex:1; border:2.5px solid var(--accent); background:var(--accent-fill); border-radius:6px; padding:28px;">
+      <div class="mono" style="font-size:22px; color:var(--accent); letter-spacing:2px; margin-bottom:20px;">B — tool + hedef</div>
+      <div class="mono" style="font-size:20px; line-height:1.9;">→ hedefi ver, sırayı model seçsin<br>→ context'i kendi toplasın<br>→ her zaman genel modele oyna<br>→ 6 ay sonrasının modeline inşa et</div>
+    </div>
+  </div>
+  <div class="botbar" style="margin-top:24px;">
+    <span class="note">not: b'nin bedeli var — ilk 6 ay pmf kötü görünecek, daha az deterministik.</span>
+    <span class="note" style="font-size:15px;">bitter lesson · rich sutton</span>
+  </div>
+</section>
+
+<!-- 14 · SÜZGEÇ · bölüm 09 -->
+<section class="canvas r45" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="border-bottom:2px solid var(--line); padding-bottom:20px;">
+    <span class="serial">KESİT / 14</span>
+    <span class="handle">01:04:25–01:12:04 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="margin-top:36px;">claude code'u<br>nasıl kullanıyor</div>
+  <div class="note" style="margin-top:12px;">tek doğru yol yok; bunlar onun kendi ayarları.</div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:space-evenly; margin-top:20px;">
+    <div style="border-top:1px solid var(--div); padding-top:24px; display:flex; gap:24px;">
+      <span class="mono" style="color:var(--accent); font-size:26px;">01</span>
+      <div>
+        <div style="font-size:30px; font-weight:500;">en yetenekli model, max effort</div>
+        <div class="note" style="margin-top:8px; line-height:1.6;">ucuz model aynı iş için daha çok token yakar,<br>daha çok düzeltme ister. çoğu zaman daha pahalıya gelir.</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--div); padding-top:24px; display:flex; gap:24px;">
+      <span class="mono" style="color:var(--accent); font-size:26px;">02</span>
+      <div>
+        <div style="font-size:30px; font-weight:500;">görevlerin %80'i plan mode'da</div>
+        <div class="note" style="margin-top:8px; line-height:1.6;">yaptığı tek şey prompt'a bir cümle eklemek: "henüz kod yazma".<br>terminalde shift+tab ×2 · plan iyiyse auto accept.</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--div); padding-top:24px; display:flex; gap:24px;">
+      <span class="mono" style="color:var(--accent); font-size:26px;">03</span>
+      <div>
+        <div style="font-size:30px; font-weight:500;">arayüzü değiştir</div>
+        <div class="note" style="margin-top:8px; line-height:1.6;">kodunun 1/3'ü terminal, 1/3'ü desktop, 1/3'ü ios uygulaması.<br>her yerde aynı agent çalışıyor.</div>
+      </div>
+    </div>
+  </div>
+  <div class="botbar">
+    <span class="note">claude code'a kendi ayarlarını da sorabilirsin</span>
+    <span class="note" style="font-size:15px;">blueprint.dark</span>
+  </div>
+</section>
+
+<!-- 15 · HOOK · bölüm 10 -->
+<section class="canvas r169" style="display:flex; flex-direction:column;">
+  <div class="topbar">
+    <span class="serial">KESİT / 15</span>
+    <span class="handle">01:12:04–01:22:36 · @omerfrkdemiral</span>
+  </div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+    <div class="sub" style="margin-bottom:24px;">// lightning round · hayat mottosu</div>
+    <div class="h1" style="font-size:64px;">sağduyu kullan.</div>
+    <div class="note" style="margin-top:28px; line-height:1.7;">gördüğü hataların çoğu insanların süreci düşünmeden takip etmesinden çıkıyor.<br>bir şey tuhaf kokuyorsa muhtemelen iyi bir fikir değildir.</div>
+  </div>
+  <div class="botbar">
+    <span class="note" style="font-size:15px;">agi sonrası planı: miso yapmak. beyaz miso 3 ay, kırmızı miso 2–4 yıl.</span>
+    <span class="note" style="font-size:15px;">▓▓▓▓▓ 15/15</span>
+  </div>
+</section>
+
+</body>
+</html>

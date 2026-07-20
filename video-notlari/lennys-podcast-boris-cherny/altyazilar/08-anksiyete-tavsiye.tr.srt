@@ -1,0 +1,575 @@
+1
+00:00:02,105 --> 00:00:07,625
+product manager'lar, agent'larla çalışan
+başkaları, insanlarda şöyle bir anksiyete var:
+
+2
+00:00:07,625 --> 00:00:13,545
+agent'ları çalışmadığı zaman. Şöyle bir his:
+of, Niza'nın bir sorusu var, cevap bekliyor,
+
+3
+00:00:13,545 --> 00:00:18,425
+ya da bir şeye takılmış, ya da işte
+"kaybettiğim onca verimlilik var" diyorsun.
+
+4
+00:00:18,425 --> 00:00:22,345
+Kalkıp tekrar çalıştırmam lazım.
+Sen böyle bir şey hissediyor musun?
+
+5
+00:00:22,345 --> 00:00:26,665
+Ekibin hissediyor mu? Bu takip etmemiz,
+üstüne düşünmemiz gereken bir sorun mu?
+
+6
+00:00:26,665 --> 00:00:30,905
+Bende sürekli bir sürü agent çalışıyor.
+Mesela şu anda beş tane agent çalışıyor.
+
+7
+00:00:30,905 --> 00:00:34,985
+Ve her an, yani, uyanıyorum
+ve bir sürü agent başlatıyorum.
+
+8
+00:00:34,985 --> 00:00:38,505
+Uyanınca yaptığım ilk şey şuydu:
+of, şunu bir kontrol etmek istiyorum.
+
+9
+00:00:38,505 --> 00:00:44,345
+Telefonu açtım, Claude iOS uygulaması,
+kod sekmesi, agent şunu şunu yap.
+
+10
+00:00:44,345 --> 00:00:47,865
+Çünkü dün biraz kod yazmıştım ve
+"dur, bunu doğru mu yaptım?" dedim.
+
+11
+00:00:47,865 --> 00:00:52,105
+Bir şeyden şüphelendim.
+Doğruymuş, ama artık bunu yapmak
+
+12
+00:00:52,105 --> 00:00:57,785
+o kadar kolay ki. Yani bilmiyorum,
+o küçük anksiyete var. Belki ben şahsen
+
+13
+00:00:57,785 --> 00:01:00,185
+pek hissetmedim, çünkü bende
+sürekli agent çalışıyor.
+
+14
+00:01:00,905 --> 00:01:04,905
+Ayrıca artık terminal'e kilitli değilim.
+Belki kodumun üçte birini
+
+15
+00:01:04,905 --> 00:01:10,425
+artık terminal'de yazıyorum, üçte birini
+masaüstü uygulamasında. Üçte biri de
+
+16
+00:01:10,425 --> 00:01:15,065
+iOS uygulaması, bu çok şaşırtıcı.
+Çünkü kod yazma şeklimin bu olacağını
+
+17
+00:01:15,065 --> 00:01:21,065
+hiç düşünmezdim, 2026'da bile.
+Buna hâlâ "kod yazmak" demen çok hoşuma gitti,
+
+18
+00:01:21,065 --> 00:01:25,785
+ki aslında Claude Code'a senin yerine kod
+yazmasını söylemek. İlginç olan şu: artık
+
+19
+00:01:25,785 --> 00:01:32,745
+kod yazmak bu. Kod yazmak artık ne istediğini
+tarif etmek, gerçek kod yazmak değil.
+
+20
+00:01:32,745 --> 00:01:37,625
+Merak ediyorum, eskiden delikli kartlarla
+kod yazanlara yazılımı gösterseydin
+
+21
+00:01:37,625 --> 00:01:43,225
+ne derlerdi acaba. Bir yerde okumuştum,
+ACM'in çok eski sayılarında galiba,
+
+22
+00:01:43,945 --> 00:01:48,985
+ya da öyle bir dergide, insanlar diyordu ki
+"hayır, bu aynı şey değil.
+
+23
+00:01:48,985 --> 00:01:52,745
+Bu gerçekten kod yazmak değil."
+Onlar buna programlama diyordu. Bence
+
+24
+00:01:52,745 --> 00:01:57,225
+"coding" nispeten yeni bir kelime.
+Ama şunu düşünüyorum: eskiden,
+
+25
+00:01:57,225 --> 00:02:02,105
+benim ailem Sovyetler Birliği'nden.
+Ben Ukrayna'da doğdum. Ve dedem
+
+26
+00:02:02,105 --> 00:02:07,385
+aslında Sovyetler Birliği'nin ilk
+programcılarındandı, delikli kartlarla programlıyordu.
+
+27
+00:02:08,185 --> 00:02:13,785
+Ve annem büyürken ona şu hikâyeleri
+anlatırdı, daha doğrusu annem
+
+28
+00:02:13,785 --> 00:02:17,785
+bana anlatırdı: küçükken dedem eve
+bu delikli kartları getirirmiş. Kocaman
+
+29
+00:02:17,785 --> 00:02:22,105
+delikli kart desteleri olurmuş. Annem de
+onların üstünü boya kalemleriyle karalarmış.
+
+30
+00:02:22,105 --> 00:02:26,185
+Onun çocukluk anısı buydu. Ama dedem için
+programlama deneyimi oydu. Ve
+
+31
+00:02:26,185 --> 00:02:30,505
+aslında yazılıma geçişi hiç görmedi,
+ama bir noktada yazılıma geçildi.
+
+32
+00:02:30,505 --> 00:02:32,825
+Sanırım o eski kuşak programcılar
+
+33
+00:02:33,465 --> 00:02:36,985
+yazılımı pek ciddiye almadı.
+Muhtemelen dediler ki
+
+34
+00:02:36,985 --> 00:02:41,625
+"bu gerçekten kod yazmak değil."
+Ama bu alan hep böyle değişegeldi.
+
+35
+00:02:41,625 --> 00:02:44,825
+Bunu biliyor musun bilmiyorum
+ama ben de Ukrayna doğumluyum.
+
+36
+00:02:45,945 --> 00:02:47,865
+Bilmiyordum. Öyle mi? Hangi şehir?
+
+37
+00:02:47,865 --> 00:02:49,225
+Odessalıyım.
+
+38
+00:02:49,225 --> 00:02:50,425
+Ben de.
+
+39
+00:02:52,265 --> 00:02:53,385
+İnanılmaz.
+
+40
+00:02:53,385 --> 00:02:56,025
+Vay be. Müthiş.
+
+41
+00:02:56,025 --> 00:02:58,665
+Ne tesadüf, belki ufak bir
+akrabalık bile vardır.
+
+42
+00:02:59,785 --> 00:03:02,505
+Ailen hangi yıl çıktı,
+sen ne zaman çıktın?
+
+43
+00:03:02,505 --> 00:03:05,305
+Biz 95'te geldik.
+
+44
+00:03:05,305 --> 00:03:07,785
+Tamam. Biz 88'de çıkmıştık,
+biraz daha erken.
+
+45
+00:03:07,785 --> 00:03:08,745
+Öyle mi.
+
+46
+00:03:08,745 --> 00:03:11,625
+Çıkmasaydık ne kadar farklı
+bir hayat olurdu, değil mi?
+
+47
+00:03:11,625 --> 00:03:16,905
+Evet. Her gün kendimi çok şanslı
+hissediyorum, buralara gelebildiğim için.
+
+48
+00:03:16,905 --> 00:03:21,305
+Evet. Benim ailem, ne zaman bir tost makinesi
+ya da yemek görseler, "Amerika'ya!" diyorlar.
+
+49
+00:03:21,305 --> 00:03:27,785
+Neyse, bu kadar yeter, ama anlıyorsun.
+Hayatın nasıl olabileceğini düşünmeye başlayınca.
+
+50
+00:03:27,785 --> 00:03:30,985
+Evet, aynen. Biz de öyle yapıyoruz.
+Ama yine de votka içiliyor.
+
+51
+00:03:31,545 --> 00:03:33,065
+Yine de votka. Kesinlikle.
+
+52
+00:03:34,265 --> 00:03:39,865
+Peki. Birkaç şey daha sorayım.
+Gerçekten güzel tavsiyeler paylaştın:
+
+53
+00:03:40,745 --> 00:03:44,745
+AI'dan nasıl en çok verim alınır,
+AI üstüne nasıl harika ürün kurulur.
+
+54
+00:03:44,745 --> 00:03:49,305
+Bir tavsiyen şuydu: ekibine istediği kadar
+token ver. Bırak deneyler yapsınlar.
+
+55
+00:03:49,865 --> 00:03:54,425
+Genel olarak da şunu dedin: modele göre değil,
+modelin gittiği yere göre inşa et,
+
+56
+00:03:54,425 --> 00:03:57,785
+bugünkü haline göre değil. AI ürünü kurmaya
+çalışanlara başka ne tavsiye edersin?
+
+57
+00:03:57,785 --> 00:04:03,545
+Birkaç şey daha söyleyebilirim.
+Birincisi: modeli kutuya sokmaya çalışma.
+
+58
+00:04:03,545 --> 00:04:08,665
+İnsanların model üstüne inşa ederken ilk
+içgüdüsü onu çok belirli bir şekilde davranmaya zorlamak.
+
+59
+00:04:09,225 --> 00:04:13,065
+"Bu daha büyük bir sistemin
+parçası" diyorlar. Örnek olarak:
+
+60
+00:04:13,065 --> 00:04:17,945
+modelin üstüne çok katı workflow'lar kuruyorlar,
+"önce adım bir, sonra adım iki,
+
+61
+00:04:17,945 --> 00:04:21,705
+sonra adım üç yapacaksın" gibi.
+Bunu yapan süslü bir orchestrator'ın oluyor.
+
+62
+00:04:21,705 --> 00:04:24,745
+Ama neredeyse her zaman daha iyi
+sonuç alırsın: modele sadece tool ver,
+
+63
+00:04:24,745 --> 00:04:29,065
+hedefi ver ve bırak kendi çözsün.
+Bir yıl önce gerçekten çok
+
+64
+00:04:29,065 --> 00:04:33,785
+scaffolding gerekiyordu, ama bugün
+pek gerekmiyor. Bu prensibe ne ad
+
+65
+00:04:33,785 --> 00:04:37,945
+vereceğimi bilmiyorum ama şöyle:
+"modelin senin için ne yapabileceğini sorma."
+
+66
+00:04:37,945 --> 00:04:42,425
+Belki böyle bir şey. Sadece şunu düşün:
+modele işleri yapması için tool'ları nasıl veririm.
+
+67
+00:04:42,425 --> 00:04:47,065
+Aşırı kürasyon yapma. Kutuya sokma.
+Baştan bir sürü context vermeye çalışma.
+
+68
+00:04:47,065 --> 00:04:50,985
+Ona tool ver ki ihtiyacı olan context'i
+kendi alsın. Daha iyi sonuç alırsın.
+
+69
+00:04:52,905 --> 00:04:59,225
+İkincisi, aslında bu prensibin
+daha da genel bir versiyonu:
+
+70
+00:04:59,225 --> 00:05:04,665
+bitter lesson. Claude Code ekibi olarak,
+umarım dinleyiciler
+
+71
+00:05:04,665 --> 00:05:09,465
+bunu okumuştur ama Rich Sutton'ın
+belki 10 yıl önce yazdığı bir blog yazısı var,
+
+72
+00:05:09,465 --> 00:05:15,145
+adı bitter lesson. Aslında çok basit bir fikir.
+Diyor ki: daha genel model
+
+73
+00:05:15,145 --> 00:05:19,385
+her zaman daha özel modeli geçer.
+O bunu sürücüsüz arabalar
+
+74
+00:05:19,385 --> 00:05:24,665
+ve benzeri alanlar için söylüyordu ama
+bitter lesson'ın o kadar çok
+
+75
+00:05:24,665 --> 00:05:29,865
+sonucu var ki. Benim için en büyüğü şu:
+her zaman daha genel modele oyna.
+
+76
+00:05:30,825 --> 00:05:34,345
+Uzun vadede, işler için minik
+modeller kullanmaya çalışma.
+
+77
+00:05:34,345 --> 00:05:38,025
+Fine-tune etmeye çalışma.
+Bunların hiçbirini yapma. Bazı uygulamalarda
+
+78
+00:05:38,025 --> 00:05:42,105
+bunu yapmak için sebepler var,
+ama neredeyse her zaman daha genel modele oyna,
+
+79
+00:05:42,105 --> 00:05:47,225
+yapabiliyorsan, o esnekliğin varsa.
+Yani bu workflow'lar aslında
+
+80
+00:05:48,425 --> 00:05:52,185
+genel modelin tersi.
+Etrafına scaffolding koymak demek.
+
+81
+00:05:52,185 --> 00:05:55,545
+Genel olarak gördüğümüz şu:
+scaffolding performansı belki 10,
+
+82
+00:05:55,545 --> 00:06:02,265
+20% artırabilir. Ama bu kazanımlar
+çoğu zaman bir sonraki modelle silinip gidiyor.
+
+83
+00:06:02,265 --> 00:06:07,625
+Yani bir sonrakini beklemek neredeyse daha iyi.
+Sanırım son bir prensip daha var,
+
+84
+00:06:07,625 --> 00:06:14,585
+Claude Code'un geriye dönüp bakınca
+doğru yaptığı bir şey. En baştan itibaren
+
+85
+00:06:14,585 --> 00:06:21,865
+bugünün modeline değil, altı ay sonrasının
+modeline göre inşa etmeye oynadık.
+
+86
+00:06:21,865 --> 00:06:25,865
+Ürünün çok erken versiyonları
+kodumun çok azını yazıyordu, çünkü güvenmiyordum.
+
+87
+00:06:25,865 --> 00:06:32,345
+Çünkü Sonnet 3.5 vardı, sonra 3.6,
+ya da 3.5 new mı neydi, ne ad verdiysek işte.
+
+88
+00:06:32,345 --> 00:06:36,905
+O modeller kod yazmada henüz pek iyi değildi.
+Yaklaşıyorlardı,
+
+89
+00:06:36,905 --> 00:06:43,785
+ama hâlâ çok erkendi. O zamanlar model
+benim yerime Git kullanıyordu, bazı şeyleri
+
+90
+00:06:43,785 --> 00:06:48,585
+otomatikleştiriyordu, ama kod yazmamın büyük
+kısmını yapmıyordu. Claude Code'daki bahis şuydu:
+
+91
+00:06:48,585 --> 00:06:53,705
+bir noktada model yeterince iyi olacak ve
+kodun büyük kısmını yazabilecek. Bunu
+
+92
+00:06:53,705 --> 00:06:58,745
+ilk olarak Opus 4 ve Sonnet 4'te görmeye başladık.
+Opus 4 bizim ilk ASL 3
+
+93
+00:06:58,745 --> 00:07:05,065
+sınıfı modelimizdi, Mayıs'ta çıkardık.
+Ve o kırılmayı gördük, çünkü herkes
+
+94
+00:07:05,065 --> 00:07:09,545
+ilk kez Claude Code kullanmaya başladı.
+Büyümemiz asıl o zaman exponential oldu.
+
+95
+00:07:09,545 --> 00:07:14,185
+Ve dediğim gibi, öyle de kaldı.
+Bence bu, aslında bir sürü insana
+
+96
+00:07:14,185 --> 00:07:18,905
+verdiğim bir tavsiye, özellikle
+startup kuranlara. Rahatsız edici olacak,
+
+97
+00:07:18,905 --> 00:07:23,465
+çünkü ilk altı ay product market fit'in
+pek iyi olmayacak. Ama altı ay sonrasının
+
+98
+00:07:23,465 --> 00:07:28,905
+modeline göre inşa edersen, o model çıktığında
+sıfırdan tam gaz başlarsın ve
+
+99
+00:07:28,905 --> 00:07:33,385
+ürün oturur, çalışmaya başlar.
+Peki "altı ay sonrasının
+
+100
+00:07:33,385 --> 00:07:37,705
+modeline göre inşa et" derken,
+insanlar neyin olacağını varsayabilir?
+
+101
+00:07:37,705 --> 00:07:43,785
+Sadece genel olarak daha mı iyi olacak?
+"Tamam, neredeyse yeterince iyi" demek
+
+102
+00:07:43,785 --> 00:07:45,865
+o konuda iyileşeceğinin işareti mi?
+Bir tavsiyen var mı?
+
+103
+00:07:45,865 --> 00:07:49,305
+Bence bu iyi bir yöntem.
+Tabii bir AI lab'in içindeyken
+
+104
+00:07:49,305 --> 00:07:54,985
+tam olarak hangi yönlerde iyileştiğini
+görebiliyoruz. Yani biraz haksız bir avantaj, ama
+
+105
+00:07:54,985 --> 00:07:59,385
+bunu konuşmaya da çalışıyoruz.
+Mesela iyileşeceği yönlerden biri:
+
+106
+00:07:59,385 --> 00:08:03,945
+tool kullanmada ve bilgisayar kullanmada gittikçe
+daha iyi olacak. Bu benim gireceğim bir bahis.
+
+107
+00:08:05,145 --> 00:08:09,145
+Bir diğeri: uzun süreler boyunca
+çalışmada gittikçe daha iyi olacak.
+
+108
+00:08:10,185 --> 00:08:13,065
+Bu konuda her türlü çalışma var,
+ama sadece gidişata bakarsan,
+
+109
+00:08:13,065 --> 00:08:18,985
+ya da kendi deneyimime bakarsak:
+bir yıl önce Sonnet 3.5 kullanırken
+
+110
+00:08:18,985 --> 00:08:24,985
+belki 15 ya da 30 saniye çalışabiliyordu,
+sonra rayından çıkmaya başlıyordu.
+
+111
+00:08:24,985 --> 00:08:29,625
+Karmaşık her işte elinden tutmak
+zorundaydın. Ama bugün
+
+112
+00:08:29,625 --> 00:08:35,625
+Opus 4.6 ile ortalama 10, 30,
+20, 30 dakika başıboş çalışabiliyor.
+
+113
+00:08:35,625 --> 00:08:39,465
+Ben de başka bir Claude başlatıp
+ona başka bir iş veriyorum. Dediğim gibi,
+
+114
+00:08:39,465 --> 00:08:44,665
+bende sürekli bir sürü Claude çalışıyor ve
+saatlerce, hatta günlerce çalışabiliyorlar.
+
+115
+00:08:44,665 --> 00:08:48,425
+Haftalarca çalıştıkları örnekler bile var.
+Bence zamanla
+
+116
+00:08:48,425 --> 00:08:52,025
+bu gittikçe daha normal hale gelecek:
+modeller çok çok uzun süreler
+
+117
+00:08:52,025 --> 00:08:55,305
+boyunca çalışacak. Ve başlarında oturup
+onlara dadılık etmen gerekmeyecek.

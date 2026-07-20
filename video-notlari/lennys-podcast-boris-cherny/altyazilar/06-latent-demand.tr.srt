@@ -1,0 +1,458 @@
+1
+00:00:00,696 --> 00:00:05,896
+Kod yazmayı daha çok sevdiğinden
+bahsettin. Twitter'da bir anket yaptım.
+
+2
+00:00:05,896 --> 00:00:10,776
+Gördün mü bilmiyorum. Üç ayrı anket
+açtım. Önce mühendislere sordum:
+
+3
+00:00:10,776 --> 00:00:14,616
+AI araçlarını kullanmaya başladığından
+beri işini daha çok mu seviyorsun, az mı?
+
+4
+00:00:14,616 --> 00:00:21,416
+Sonra PM'lere ve tasarımcılara ayrı
+sordum. Mühendis ve PM'lerin %70'i
+
+5
+00:00:21,416 --> 00:00:29,416
+işini daha çok sevdiğini söyledi, %10'u
+daha az. Tasarımcılarda ise sadece %55'i
+
+6
+00:00:29,416 --> 00:00:34,376
+daha çok seviyorum dedi, %20'si
+daha az. Bence bu gerçekten
+
+7
+00:00:34,376 --> 00:00:39,496
+ilginçti. Çok ilginç. Bu insanlarla
+konuşmak isterdim, hem daha çok sevenlerle
+
+8
+00:00:39,496 --> 00:00:43,016
+hem daha az sevenlerle. Anlamak
+için. Hiçbiriyle konuşabildin mi?
+
+9
+00:00:43,016 --> 00:00:46,856
+Birkaç kişi yanıt verdi. Bir takip
+anketi yapıyoruz, linkini show notes'a
+
+10
+00:00:46,856 --> 00:00:51,736
+koyacağız. Biraz daha derine ineceğiz.
+Ama şu var: neyi daha eğlenceli,
+
+11
+00:00:51,736 --> 00:00:55,736
+neyi daha az eğlenceli yapıyor?
+Tasarımcılar pek bir şey paylaşmadı.
+
+12
+00:00:55,736 --> 00:00:59,096
+Soranlara bile, "işini neden daha
+az seviyorsun?" dediğimde çok fazla
+
+13
+00:00:59,096 --> 00:01:02,456
+cevap gelmedi. Orada ne olduğunu merak
+ediyorum. Evet. Bunu ben de görüyorum.
+
+14
+00:01:02,456 --> 00:01:08,696
+Şey, bence bizde herkes epey
+teknik. Bu zaten eleme kriterimiz.
+
+15
+00:01:08,696 --> 00:01:12,296
+İnsanlar işe girerken çok sayıda
+teknik mülakattan geçiyor,
+
+16
+00:01:12,296 --> 00:01:19,336
+teknik olmayan pozisyonlar için
+bile. Ve bizim tasarımcılarımız
+
+17
+00:01:19,336 --> 00:01:25,576
+kod da yazıyor. Onlar için bu, gördüğüm
+kadarıyla keyif aldıkları bir şey.
+
+18
+00:01:25,576 --> 00:01:30,456
+Çünkü mühendisleri rahatsız etmek yerine
+girip kendileri yazabiliyorlar. Hatta
+
+19
+00:01:30,456 --> 00:01:34,376
+daha önce kod yazmayan tasarımcılar
+bile başladı. Onlar için harika, çünkü
+
+20
+00:01:34,376 --> 00:01:39,896
+kendi önlerini açabiliyorlar. Ama daha
+fazla deneyim duymak isterim, çünkü
+
+21
+00:01:39,896 --> 00:01:43,576
+eminim durum böyle tek tip değildir.
+Evet. Bunu dinliyorsanız yorum bırakın,
+
+22
+00:01:43,576 --> 00:01:47,416
+işinizi daha az seviyorsanız. Çünkü hem
+senin dediğin, hem benim duyduğum şu:
+
+23
+00:01:47,416 --> 00:01:53,176
+PM ve mühendislerin %70'i
+işini daha çok seviyor. Yani
+
+24
+00:01:53,176 --> 00:01:58,616
+o grupta değilseniz bir şeyler ters
+gidiyor olabilir. Evet. Şunu da görüyoruz:
+
+25
+00:01:58,616 --> 00:02:03,576
+insanlar farklı araçlar kullanıyor.
+Tasarımcılarımız kod yazmak için Claude
+
+26
+00:02:03,576 --> 00:02:07,896
+desktop app'i çok daha fazla kullanıyor.
+İndiriyorsun, bir code tab'i var.
+
+27
+00:02:07,896 --> 00:02:12,136
+Cowork'ün yanında ve tam olarak aynı
+Claude Code. Aynı agent, her şey aynı.
+
+28
+00:02:12,136 --> 00:02:16,776
+Bu bizde aylardır var. Yani bir
+sürü terminal açmak zorunda kalmadan
+
+29
+00:02:16,776 --> 00:02:21,976
+kod yazabiliyorsun, ama Claude
+Code'un gücü elinde. Ve en önemlisi,
+
+30
+00:02:21,976 --> 00:02:25,736
+istediğin kadar Claude session'ı
+paralel çalıştırabiliyorsun. Buna
+
+31
+00:02:25,736 --> 00:02:31,336
+multi-clauding diyoruz. Bu, mühendis
+olmayanlar için daha doğal geliyor.
+
+32
+00:02:31,336 --> 00:02:36,376
+Ve bu aslında ürünü insanların
+olduğu yere götürmeye geri dönüyor.
+
+33
+00:02:36,376 --> 00:02:39,576
+İnsanlara farklı bir workflow dayatmak
+istemezsin. Yeni bir şey öğrenmek için
+
+34
+00:02:39,576 --> 00:02:44,376
+yollarından çıkmalarını istemezsin.
+İnsanlar ne yapıyorsa odur. Onu biraz
+
+35
+00:02:44,376 --> 00:02:48,776
+kolaylaştırabilirsen, çok daha iyi bir
+ürün olur, insanlar daha çok sever. Bu da
+
+36
+00:02:48,776 --> 00:02:52,776
+latent demand prensibi. Bence
+üründeki en önemli tek prensip bu.
+
+37
+00:02:52,776 --> 00:02:56,696
+Bunu biraz açar mısın? Zaten oraya
+gelecektim. Bu prensip nedir,
+
+38
+00:02:57,256 --> 00:03:00,536
+ve bu latent demand'i açığa
+çıkardığında ne oluyor?
+
+39
+00:03:00,536 --> 00:03:05,976
+Latent demand şu fikir: ürünü öyle
+kurarsın ki insanlar onu hack'leyebilsin,
+
+40
+00:03:05,976 --> 00:03:11,576
+ya da tasarlanmadığı bir şekilde
+kötüye kullanabilsin, istedikleri şeyi
+
+41
+00:03:11,576 --> 00:03:17,656
+yapmak için. Bu da ürünü kuran kişiye
+ürünü nereye götüreceğini öğretir.
+
+42
+00:03:17,656 --> 00:03:23,736
+Örneği Facebook Marketplace.
+Ekibin yöneticisi,
+
+43
+00:03:23,736 --> 00:03:28,376
+Fiona, Marketplace ekibinin
+kurucu yöneticisiydi. Bunu çok
+
+44
+00:03:28,376 --> 00:03:34,856
+anlatır. Facebook Marketplace şu
+gözlemle başladı, sanırım 2016
+
+45
+00:03:34,856 --> 00:03:40,056
+falandı: Facebook gruplarındaki
+paylaşımların %40'ı alım satımdı.
+
+46
+00:03:41,096 --> 00:03:44,936
+Bu çılgınca. İnsanlar Facebook grupları
+ürününü alım satım için kötüye kullanıyor.
+
+47
+00:03:44,936 --> 00:03:49,096
+Ama bu güvenlik anlamında bir kötüye
+kullanım değil. Şu anlamda: kimse ürünü
+
+48
+00:03:49,096 --> 00:03:52,456
+bunun için tasarlamadı, ama insanlar
+çözüyor çünkü çok işe yarıyor.
+
+49
+00:03:53,416 --> 00:03:56,776
+Yani gayet açıktı: insanların alıp
+satması için daha iyi bir ürün yaparsan,
+
+50
+00:03:56,776 --> 00:04:01,096
+bunu seveceklerdi. Marketplace'in
+tutacağı buradan çok net görünüyordu.
+
+51
+00:04:01,096 --> 00:04:04,296
+İlk yaptıkları şey alım satım grupları
+oldu, yani özel amaçlı gruplar,
+
+52
+00:04:04,936 --> 00:04:07,576
+insanlar bunu yapabilsin diye.
+İkinci ürün de Marketplace'ti.
+
+53
+00:04:09,096 --> 00:04:11,736
+Facebook Dating de sanırım
+çok benzer bir yerden çıktı.
+
+54
+00:04:12,296 --> 00:04:17,336
+Gözlem şuydu sanırım: profil
+görüntülemelerine bakınca,
+
+55
+00:04:17,336 --> 00:04:21,656
+yani Facebook'ta birbirinin profiline
+bakmasına, görüntülemelerin %60'ı
+
+56
+00:04:21,656 --> 00:04:26,056
+arkadaş olmayan, karşı cinsten
+insanlardı. Yani bu tam da
+
+57
+00:04:26,056 --> 00:04:30,376
+klasik bir dating kurgusu, ama insanlar
+sadece birbirini gizlice izliyor.
+
+58
+00:04:30,376 --> 00:04:33,336
+Belki bunun için bir ürün
+yaparsan, işe yarayabilir.
+
+59
+00:04:35,016 --> 00:04:41,256
+İşte bu latent demand fikri
+bence çok güçlü. Mesela Cowork da
+
+60
+00:04:41,256 --> 00:04:46,776
+buradan çıktı. Son altı aydır gördük
+ki Claude Code kullanan bir sürü insan
+
+61
+00:04:46,776 --> 00:04:51,416
+onu kod yazmak için kullanmıyordu.
+Twitter'da biri domates yetiştirmek için
+
+62
+00:04:51,416 --> 00:04:56,936
+kullanıyordu. Bir başkası kendi genomunu
+analiz etmek için. Biri bozuk diskten
+
+63
+00:04:56,936 --> 00:05:02,776
+fotoğraf kurtarmak için kullanıyordu.
+Düğün fotoğraflarıymış. Biri de sanırım
+
+64
+00:05:04,616 --> 00:05:09,496
+bir MRI'ı analiz etmek için
+kullanıyordu. Yani hiç teknik olmayan
+
+65
+00:05:09,496 --> 00:05:15,336
+bir sürü farklı kullanım var. Ve çok
+açıktı: insanlar bu işi yapabilmek için
+
+66
+00:05:15,336 --> 00:05:20,136
+terminal kullanma zahmetine katlanıyor.
+Belki onlara bir ürün yapmalıyız.
+
+67
+00:05:20,136 --> 00:05:25,176
+Bunu epey erken gördük, geçen yıl mayıs
+gibi. Ofise girdiğimi hatırlıyorum,
+
+68
+00:05:25,176 --> 00:05:32,216
+data scientist'imiz Brendan'da Claude
+Code vardı. Terminali açmış. Şok oldum.
+
+69
+00:05:32,856 --> 00:05:36,776
+Dedim ki, Brendan, ne yapıyorsun?
+Terminali açmayı çözmüşsün, ki bu
+
+70
+00:05:37,496 --> 00:05:40,856
+çok mühendis işi bir ürün. Bir sürü
+mühendis bile terminal istemiyor.
+
+71
+00:05:40,856 --> 00:05:48,776
+İşini yapmanın en alt seviye
+yolu. Resmen bilgisayarın
+
+72
+00:05:48,776 --> 00:05:53,416
+en dibinde. Ve o, terminali çözmüş.
+Node.js indirmiş. Claude Code
+
+73
+00:05:53,416 --> 00:05:57,576
+indirmiş. Ve terminalde SQL analizi
+yapıyordu. Çılgıncaydı. Sonraki hafta ise
+
+74
+00:05:57,576 --> 00:06:02,056
+bütün data scientist'ler aynı şeyi
+yapıyordu. Yani insanların ürünü böyle
+
+75
+00:06:02,056 --> 00:06:05,576
+kötüye kullandığını, tasarlanmadığı
+şekilde faydalı bir iş için kullandığını
+
+76
+00:06:05,576 --> 00:06:11,336
+gördüğünde, bu çok güçlü bir
+işaret: bir ürün yapmalısın,
+
+77
+00:06:11,336 --> 00:06:15,656
+insanlar bunu sevecek. Tam da bu
+iş için özel bir şey. Bence şimdi
+
+78
+00:06:15,656 --> 00:06:18,616
+latent demand'in ilginç bir
+ikinci boyutu da var. Klasik
+
+79
+00:06:18,616 --> 00:06:22,856
+çerçeve şu: insanlar ne yapıyorsa ona
+bak, onu biraz kolaylaştır, güç ver.
+
+80
+00:06:23,736 --> 00:06:27,336
+Son altı aydır gördüğüm modern
+çerçeve ise biraz farklı.
+
+81
+00:06:28,616 --> 00:06:33,096
+Şöyle: modelin ne yapmaya çalıştığına
+bak ve onu biraz kolaylaştır.
+
+82
+00:06:34,296 --> 00:06:38,456
+Claude Code'u yapmaya ilk başladığımızda,
+insanların LLM'lerle tasarlarken
+
+83
+00:06:39,016 --> 00:06:43,736
+izlediği yol şuydu: modeli kutuya
+sokuyorlardı. "İşte yapmak istediğim
+
+84
+00:06:43,736 --> 00:06:47,256
+uygulama. İşte istediğim şey. Model,
+sen bunun şu parçasını yapacaksın.
+
+85
+00:06:47,256 --> 00:06:50,936
+Şu tool'lar ve API'lerle
+şöyle etkileşeceksin." falan.
+
+86
+00:06:51,656 --> 00:06:52,376
+Claude Code'da ise
+
+87
+00:06:52,376 --> 00:06:57,096
+bunu tersine çevirdik. Ürün modelin
+kendisi. Onu açığa çıkarmak istiyoruz.
+
+88
+00:06:57,096 --> 00:07:01,416
+Etrafına minimum scaffolding, minimum
+tool seti verelim ki işini yapabilsin.
+
+89
+00:07:01,416 --> 00:07:06,696
+Hangi tool'u hangi sırayla
+çalıştıracağına kendi karar versin. Bence
+
+90
+00:07:06,696 --> 00:07:11,016
+bunun çoğu modelin ne yapmak istediğinin
+latent demand'iydi. Araştırmada buna
+
+91
+00:07:11,016 --> 00:07:16,216
+on distribution olmak diyoruz. Modelin ne
+yapmaya çalıştığını görmek istersin. Ürün
+
+92
+00:07:16,216 --> 00:07:21,096
+dilinde latent demand aynı kavram, modele
+uygulanmış hali. Cowork'ten bahsettin.

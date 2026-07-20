@@ -1,0 +1,575 @@
+1
+00:00:02,813 --> 00:00:08,893
+Bugünün dünyasında bir şeyin ne
+kadar hızlı değişebildiği inanılmaz.
+Bunu bir yıl önce çıkardın,
+
+2
+00:00:08,893 --> 00:00:14,413
+insanların AI ile kod yazması ilk kez
+olmuyordu. Ama bir yılda yazılım mühendisliği
+
+3
+00:00:14,413 --> 00:00:19,693
+mesleğinin tamamı çarpıcı şekilde
+değişti. Bir sürü tahmin vardı. "AI kodun
+
+4
+00:00:19,693 --> 00:00:24,173
+%100'ünü yazacak" gibi. Herkes "yok artık, bu
+delilik, sen neden bahsediyorsun" diyordu.
+
+5
+00:00:24,173 --> 00:00:28,573
+Şimdiyse "tabii ki, dedikleri gibi oluyor"
+durumu. İşler o kadar hızlı ilerliyor
+
+6
+00:00:28,573 --> 00:00:30,733
+ve o kadar hızlı değişiyor ki.
+
+7
+00:00:30,733 --> 00:00:37,373
+Evet, gerçekten hızlı. Mayıs'taki Code with
+Claude'da, Anthropic olarak yaptığımız
+
+8
+00:00:37,373 --> 00:00:42,653
+ilk geliştirici konferansıydı, kısa bir
+konuşma yaptım. Konuşmadan sonraki Q&A'de
+
+9
+00:00:43,613 --> 00:00:47,373
+insanlar "yıl sonu için tahminleriniz
+ne?" diye soruyordu. 2025 Mayıs'ındaki
+
+10
+00:00:47,373 --> 00:00:52,573
+tahminim şuydu: yıl sonunda kod yazmak için
+IDE'ye gerek kalmayabilir. Mühendislerin
+
+11
+00:00:52,573 --> 00:00:57,373
+bunu bırakmaya başladığını göreceğiz. Salonun
+sesli sesli şok olduğunu hatırlıyorum.
+
+12
+00:00:57,373 --> 00:01:02,093
+Öyle çılgın bir tahmindi. Ama Anthropic'te
+biz olaylara zaten böyle bakıyoruz:
+
+13
+00:01:02,093 --> 00:01:06,733
+exponential olarak. Bu DNA'mızda çok
+derinde. Kurucu ortaklarımıza bakarsan,
+
+14
+00:01:06,733 --> 00:01:11,773
+üçü scaling laws makalesinin ilk üç
+yazarıydı. Yani gerçekten exponential
+
+15
+00:01:11,773 --> 00:01:16,893
+düşünüyoruz. O dönemde Claude'un yazdığı
+kodun yüzdesindeki exponential'a
+
+16
+00:01:16,893 --> 00:01:21,053
+bakarsan, çizgiyi uzatınca yıl sonunda
+%100'ü geçeceğimiz gayet açıktı.
+
+17
+00:01:21,053 --> 00:01:25,933
+Sezgiye hiç uymasa bile. Yani
+tek yaptığım çizgiyi uzatmaktı.
+
+18
+00:01:25,933 --> 00:01:30,973
+Ve evet, Kasım'da benim için bu
+gerçekleşti. O zamandan beri de böyle.
+
+19
+00:01:30,973 --> 00:01:34,653
+Bunu bir sürü farklı müşteride
+de görmeye başlıyoruz.
+
+20
+00:01:34,653 --> 00:01:37,693
+Şu anda anlattığın hikâyede çok
+ilginç bulduğum bir şey vardı:
+
+21
+00:01:37,693 --> 00:01:43,053
+sadece kurcalayıp ne olacağına
+bakma fikri. Bu OpenClaw'da da
+
+22
+00:01:43,053 --> 00:01:47,213
+çok geçiyor; Peter kurcalıyordu ve
+bir şey oldu. Sanki bu, AI'daki
+
+23
+00:01:47,213 --> 00:01:51,693
+en büyük innovation'ların çoğunda
+merkezî bir bileşen: insanlar oturup
+
+24
+00:01:51,693 --> 00:01:55,213
+bir şeyler deniyor, modelleri
+çoğu insandan daha ileri itiyor.
+
+25
+00:01:55,213 --> 00:01:59,133
+Innovation dediğin bu zaten, değil
+mi? Zorlayamazsın. Innovation'ın
+
+26
+00:01:59,133 --> 00:02:04,013
+roadmap'i yok. İnsanlara alan vermen
+lazım. Belki de doğru kelime şu:
+
+27
+00:02:04,013 --> 00:02:09,053
+safety. Yani psikolojik safety; başarısız
+olmak sorun değil. Fikirlerin %80'i
+
+28
+00:02:09,053 --> 00:02:13,853
+kötüyse sorun değil. Biraz da hesap sorman
+gerekiyor. Fikir kötüyse zararı kesip
+
+29
+00:02:13,853 --> 00:02:19,693
+sıradakine geçiyorsun, daha fazla yatırım
+yapmak yerine. Claude Code'un ilk günlerinde
+
+30
+00:02:19,693 --> 00:02:24,973
+bunun işe yarayacağına dair hiçbir fikrim
+yoktu. Çünkü Şubat'ta çıkardığımızda bile
+
+31
+00:02:24,973 --> 00:02:29,933
+kodumun belki %20'sini yazıyordu, fazlasını
+değil. Mayıs'ta bile belki %30. Hâlâ
+
+32
+00:02:29,933 --> 00:02:35,453
+kodumun çoğu için Cursor kullanıyordum ve
+%100'ü ancak Kasım'da geçti. Yani zaman aldı.
+
+33
+00:02:35,453 --> 00:02:39,213
+Ama en ilk günden bile bir şey
+yakaladığımı hissediyordum ve her gece,
+
+34
+00:02:39,213 --> 00:02:43,773
+her hafta sonu bunun üstünde hack yapıyordum.
+Neyse ki eşim çok destekleyiciydi.
+
+35
+00:02:45,053 --> 00:02:49,293
+Ama bir şey yakalamış gibi hissettiriyordu.
+Ne olduğu belli değildi. Ve bazen
+
+36
+00:02:49,293 --> 00:02:53,693
+bir ipucu bulursun, çekmen yeter. Peki
+şu anda kodunun %100'ünü Claude Code
+
+37
+00:02:53,693 --> 00:02:59,213
+yazıyor. Kod yazma halinin şu anki durumu
+bu mu? Evet. Kodumun %100'ünü Claude Code
+
+38
+00:02:59,213 --> 00:03:04,973
+yazıyor. Ben epey üretken bir kodcuyum.
+Bu, Instagram'da çalışırken de böyleydi.
+
+39
+00:03:04,973 --> 00:03:09,453
+En üretken birkaç mühendisten
+biriydim. Aslında burada,
+
+40
+00:03:09,453 --> 00:03:13,933
+Anthropic'te de hâlâ öyle.
+Vay. Ekibin başındayken bile.
+
+41
+00:03:13,933 --> 00:03:19,693
+Evet. Evet. Hâlâ çok kod yazıyorum.
+Yani her gün 10, 20, 30 pull request
+
+42
+00:03:19,693 --> 00:03:21,933
+falan ship ediyorum. Her gün.
+
+43
+00:03:21,933 --> 00:03:24,573
+Her gün. Evet. Aman Tanrım.
+
+44
+00:03:24,573 --> 00:03:31,773
+Yüzde yüzü Claude Code tarafından yazılmış.
+Kasım'dan beri elle tek satır düzenlemedim.
+
+45
+00:03:32,893 --> 00:03:39,453
+Evet, durum bu. Koda bakıyorum tabii. Yani
+tamamen elimizi çekebileceğimiz noktada
+
+46
+00:03:39,453 --> 00:03:42,653
+olduğumuzu sanmıyorum. Özellikle
+programı kullanan bir sürü insan varken,
+
+47
+00:03:42,653 --> 00:03:45,853
+doğru olduğundan emin olman lazım.
+Safe olduğundan emin olman lazım.
+
+48
+00:03:46,893 --> 00:03:49,533
+Bir de her şey için Claude'a
+otomatik code review yaptırıyoruz.
+
+49
+00:03:50,173 --> 00:03:55,293
+Anthropic'te Claude tüm PR'ların %100'ünü
+review ediyor. Sonrasında hâlâ bir insan
+
+50
+00:03:55,293 --> 00:03:59,293
+review katmanı var. Ama bu kontrol
+noktalarının bir kısmını hâlâ istiyorsun.
+
+51
+00:03:59,293 --> 00:04:03,453
+Koda bakan bir insan hâlâ istiyorsun.
+Tabii saf prototype kodu değilse; o zaten
+
+52
+00:04:03,453 --> 00:04:08,253
+hiçbir yerde çalışmayacak. Sadece bir
+prototype. Peki sıradaki frontier ne?
+
+53
+00:04:08,253 --> 00:04:13,853
+Şu noktada kodunun yüzde yüzünü AI
+yazıyor. Yazılım mühendisliğinde herkesin
+
+54
+00:04:13,853 --> 00:04:19,693
+gittiği yer belli ki bu. Çılgın bir dönüm
+noktası gibiydi. Şimdi ise "tabii ki,
+
+55
+00:04:19,693 --> 00:04:24,653
+dünya bu" durumu. Peki yazılımın nasıl
+yazıldığına dair sıradaki büyük kayma ne?
+
+56
+00:04:24,653 --> 00:04:27,933
+Ya ekibinin zaten içinde olduğu ya
+da gideceğimizi düşündüğün bir şey.
+
+57
+00:04:27,933 --> 00:04:32,013
+Şu anda olan bir şey var:
+Claude fikir üretmeye başlıyor.
+
+58
+00:04:33,053 --> 00:04:38,333
+Yani Claude geri bildirimleri tarıyor.
+Bug raporlarına bakıyor, telemetry gibi
+
+59
+00:04:38,333 --> 00:04:43,133
+şeylere bakıyor. Ve bug fix'leri ile
+ship edilecek şeyler için fikir üretmeye
+
+60
+00:04:43,133 --> 00:04:48,813
+başlıyor. Yani biraz daha bir iş
+arkadaşı gibi olmaya başlıyor,
+
+61
+00:04:48,813 --> 00:04:52,733
+öyle bir şey. İkinci şey de, kod
+yazmanın biraz dışına çıkmaya
+
+62
+00:04:52,733 --> 00:04:57,533
+başlıyoruz. Bu noktada kod yazmanın
+büyük ölçüde çözüldüğünü söylemek
+
+63
+00:04:57,533 --> 00:05:01,853
+mümkün. En azından benim yaptığım türden
+programlama için çözülmüş bir problem,
+
+64
+00:05:01,853 --> 00:05:05,933
+çünkü Claude yapabiliyor. Şimdi de
+"peki sırada ne var, bunun ötesi ne"
+
+65
+00:05:05,933 --> 00:05:11,613
+diye düşünmeye başlıyoruz. Kod yazmaya
+komşu bir sürü şey var. Bunlar da
+
+66
+00:05:11,613 --> 00:05:16,013
+gelecek bence. Ama bir de genel işler
+var. Mesela ben artık her gün Cowork'ü
+
+67
+00:05:16,013 --> 00:05:19,613
+kod yazmayla hiç ilgisi olmayan her türlü
+işi otomatik yaptırmak için kullanıyorum.
+
+68
+00:05:19,613 --> 00:05:25,053
+Mesela geçen gün bir park cezası ödemem
+gerekti. Cowork'e yaptırdım. Ekibin tüm
+
+69
+00:05:25,053 --> 00:05:29,613
+proje yönetimini Cowork yapıyor. Tablolar
+arasında veri senkronize etmek, Slack'te
+
+70
+00:05:29,613 --> 00:05:34,093
+ve e-postayla insanlara mesaj atmak falan.
+Yani frontier bunun gibi bir şey bence.
+
+71
+00:05:35,053 --> 00:05:40,253
+Kod yazmak olduğunu sanmıyorum, çünkü
+kod yazmak aşağı yukarı çözüldü.
+
+72
+00:05:40,253 --> 00:05:43,613
+Önümüzdeki birkaç ayda göreceğimiz şey
+şu bence: tüm sektörde giderek daha
+
+73
+00:05:43,613 --> 00:05:48,013
+çözülmüş hale gelecek. Her tür kod tabanı,
+insanların çalıştığı her tech stack için.
+
+74
+00:05:48,013 --> 00:05:52,013
+Ne üzerinde çalışacağını bulmana yardım
+etmesi fikri çok ilginç. Bunu dinleyen
+
+75
+00:05:52,013 --> 00:05:57,373
+bir sürü insan product manager ve muhtemelen
+ter döküyorlar. Claude'u bunun için
+
+76
+00:05:57,373 --> 00:06:01,613
+nasıl kullanıyorsun? Sadece konuşuyor
+musun? Ne inşa edeceğini bulman için
+
+77
+00:06:01,613 --> 00:06:05,373
+bulduğun akıllıca bir yöntem
+var mı? Açıkçası en basiti şu:
+
+78
+00:06:05,373 --> 00:06:10,733
+Claude Code'u ya da Cowork'ü aç ve bir Slack
+thread'ine yönlendir. Bizde bir kanal var,
+
+79
+00:06:10,733 --> 00:06:16,573
+Claude Code hakkındaki tüm iç geri bildirimler
+orada. İlk çıkardığımızdan beri, 2024'te
+
+80
+00:06:16,573 --> 00:06:21,373
+içeride bile, bir geri bildirim yangını
+gibi. Ve harika bir şey. İlk günlerde
+
+81
+00:06:21,373 --> 00:06:25,853
+yaptığım şey şuydu: biri geri
+bildirim gönderdiğinde girip her şeyi
+
+82
+00:06:25,853 --> 00:06:30,813
+elimden geldiğince hızlı düzeltiyordum. Bir
+dakika içinde, beş dakika içinde falan.
+
+83
+00:06:30,813 --> 00:06:34,893
+Çok hızlı bir geri bildirim
+döngüsü. İnsanları daha çok geri
+bildirim vermeye teşvik ediyor.
+
+84
+00:06:34,893 --> 00:06:38,813
+Çok önemli, çünkü duyulduklarını
+hissettiriyor. Genelde bir ürünü
+
+85
+00:06:38,813 --> 00:06:42,013
+kullanıp geri bildirim verirsin, bir kara
+deliğe gider ve bir daha ses çıkmaz.
+
+86
+00:06:42,013 --> 00:06:46,493
+İnsanlara duyulduklarını hissettirirsen katkı
+vermek isterler, o şeyi daha iyi yapmaya
+
+87
+00:06:46,493 --> 00:06:51,693
+yardım etmek isterler. Şimdi de
+aynı şeyi yapıyorum ama işin
+çoğunu açıkçası Claude yapıyor.
+
+88
+00:06:51,693 --> 00:06:55,613
+Onu kanala yönlendiriyorum ve diyor ki:
+"tamam, yapabileceğim birkaç şey var.
+
+89
+00:06:55,613 --> 00:06:58,893
+Birkaç PR açtım, bakmak ister
+misin?" Ben de "evet" diyorum.
+
+90
+00:06:58,893 --> 00:07:03,213
+Bunda çok daha iyi olduğunu fark
+ettin mi? Çünkü asıl kutsal kâse bu.
+
+91
+00:07:03,213 --> 00:07:07,773
+Şu an inşa etmek çözüldü. Code review
+bir sonraki darboğaz oldu, bu kadar
+
+92
+00:07:07,773 --> 00:07:12,093
+PR varken. Hepsini kim review edecek?
+Sıradaki büyük açık soru da şu:
+
+93
+00:07:12,093 --> 00:07:16,253
+ne inşa edileceğini, neye öncelik verileceğini
+bulmak için insanlar hâlâ gerekli.
+
+94
+00:07:16,253 --> 00:07:20,333
+Sen de Claude Code'un tam burada yardım
+etmeye başladığını söylüyorsun. Mesela
+
+95
+00:07:20,333 --> 00:07:23,853
+Opus 4.6 ile çok mu iyileşti?
+Buradaki gidişat nasıl?
+
+96
+00:07:23,853 --> 00:07:29,453
+Evet. Evet, çok gelişti. Bir kısmı kod
+yazmaya özel yaptığımız training'den geliyor.
+
+97
+00:07:29,453 --> 00:07:34,013
+Yani belli ki dünyanın en
+iyi kod yazma modeli ve
+
+98
+00:07:34,013 --> 00:07:38,893
+gitgide iyileşiyor. 4.6 resmen inanılmaz.
+Ama aslında kod dışında yaptığımız
+
+99
+00:07:38,893 --> 00:07:43,293
+training'in çoğu da gayet iyi transfer
+oluyor. Yani şöyle bir aktarım var:
+
+100
+00:07:43,293 --> 00:07:46,733
+modele X'i yapmayı öğretiyorsun
+ve Y'de de iyileşiyor.
+
+101
+00:07:47,613 --> 00:07:53,773
+Evet. Kazanımlar da resmen çılgınca.
+Anthropic'te son bir yılda, Claude Code'u
+
+102
+00:07:53,773 --> 00:07:57,773
+çıkardığımızdan beri, kesin sayıyı
+bilmiyorum ama mühendislik ekibini herhalde
+
+103
+00:07:57,773 --> 00:08:04,413
+4 katına çıkardık. Ama mühendis başına
+verimlilik pull request bazında
+
+104
+00:08:04,413 --> 00:08:08,493
+%200 arttı. Bu alanda gerçekten çalışan,
+geliştirici verimliliğiyle uğraşan
+
+105
+00:08:08,493 --> 00:08:12,573
+herkes için bu sayı delilik. Çünkü
+önceki hayatımda Meta'daydım ve
+
+106
+00:08:12,573 --> 00:08:17,453
+sorumluluklarımdan biri şirketin kod
+kalitesiydi. Yani tüm kod tabanlarımız.
+
+107
+00:08:17,453 --> 00:08:22,333
+Benim sorumluluğumdaydı: Facebook,
+Instagram, WhatsApp, hepsi. Bunun çoğu da
+
+108
+00:08:22,333 --> 00:08:26,333
+verimlilikle ilgiliydi, çünkü kodu daha
+kaliteli yaparsan mühendisler daha üretken
+olur.
+
+109
+00:08:27,133 --> 00:08:31,453
+Gördüğümüz şey şuydu: üzerinde yüzlerce
+mühendisin çalıştığı bir yılda
+
+110
+00:08:31,453 --> 00:08:34,733
+verimlilikte birkaç puanlık bir
+kazanım görüyordun, o kadar.
+
+111
+00:08:35,773 --> 00:08:40,013
+Bugün yüzlerce puanlık kazanımlar
+görmek resmen tamamen çılgınca.
+
+112
+00:08:40,013 --> 00:08:44,093
+Bir de bunun bu kadar normalleşmesi
+çılgınca. Bu sayıları duyuyoruz ve
+
+113
+00:08:44,093 --> 00:08:49,133
+"tabii ki, AI bize bunu yapıyor" diyoruz.
+Oysa tamamen benzeri görülmemiş bir şey.
+
+114
+00:08:49,133 --> 00:08:53,853
+Yazılım geliştirmede, ürün inşa etmede,
+tüm teknoloji dünyasında yaşanan
+
+115
+00:08:53,853 --> 00:08:58,973
+değişimin miktarı... Alışmak çok kolay. Ama
+bunun çılgınca olduğunu fark etmek önemli.

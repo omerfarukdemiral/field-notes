@@ -1,0 +1,1102 @@
+1
+00:00:00,000 --> 00:00:02,640
+Merhaba, ben Lydia. Anthropic'te Claude Code ekibindeyim.
+
+2
+00:00:02,900 --> 00:00:06,040
+Bu dersi hazırladım çünkü Claude Code'un perde arkasında
+
+3
+00:00:06,040 --> 00:00:08,180
+nasıl çalıştığını daha iyi anlamanızı istiyorum.
+
+4
+00:00:08,180 --> 00:00:11,860
+Böylece onu kendi kod tabanınıza ve
+workflow'larınıza gerçekten uyarlayabilirsiniz.
+
+5
+00:00:12,300 --> 00:00:14,900
+Bu derste agentic loop'tan bahsedeceğiz,
+
+6
+00:00:15,180 --> 00:00:18,520
+prompt'unuz nasıl derleniyor ve
+model aslında ne görüyor.
+
+7
+00:00:18,680 --> 00:00:22,600
+Sonra Claude Code'daki özellikleri ve
+onları neden kullandığımızı konuşacağız.
+
+8
+00:00:22,800 --> 00:00:27,920
+CLAUDE.md, permissions, plan mode, skill'ler,
+hook'lar, plugin'ler, MCP, ne ararsan.
+
+9
+00:00:27,920 --> 00:00:32,280
+Claude Code'u tam anlamıyla kişiselleştirip
+en iyi sonucu almak için her şey.
+
+10
+00:00:32,440 --> 00:00:36,540
+Claude Code'u bu kadar derin anlayınca
+agentic engineering'de ustalaşabilirsin.
+
+11
+00:00:37,640 --> 00:00:40,340
+Ama Claude Code ile çalışırken
+en önemli şey, tekrar söylüyorum,
+
+12
+00:00:40,400 --> 00:00:42,220
+modelin stateless olması.
+
+13
+00:00:42,460 --> 00:00:47,520
+Session içinde hafızası yok,
+call'lar arasında hafıza yok.
+
+14
+00:00:47,860 --> 00:00:51,480
+Modeli her çağırdığımızda
+esasen sıfırdan başlıyor.
+
+15
+00:00:51,900 --> 00:00:54,080
+Yani tüm state'i sağlamak harness'a kalıyor.
+
+16
+00:00:54,080 --> 00:00:57,940
+Her şey: dosyaların, konuşma geçmişin,
+tüm kurulumun, ortamın,
+
+17
+00:00:58,140 --> 00:01:00,060
+hepsi Claude Code.
+
+18
+00:01:00,200 --> 00:01:02,060
+Peki Claude Code bunu nasıl veriyor?
+
+19
+00:01:02,620 --> 00:01:04,460
+Prompt'umuza geri dönelim,
+
+20
+00:01:04,900 --> 00:01:07,600
+perde arkasında, enter'a bastığın anda,
+
+21
+00:01:08,080 --> 00:01:12,020
+Claude Code tüm bu veriyi
+tek bir büyük request'te topluyor,
+
+22
+00:01:12,160 --> 00:01:13,900
+tek bir büyük derlenmiş prompt'ta.
+
+23
+00:01:14,020 --> 00:01:16,320
+Yani elimizdekinden çok daha fazlası,
+bu sadece user one'daki.
+
+24
+00:01:17,140 --> 00:01:18,580
+İlk olarak tool schema'lar var.
+
+25
+00:01:19,180 --> 00:01:21,360
+Tool'lar hakkında henüz
+çok şey bilmene gerek yok,
+
+26
+00:01:21,480 --> 00:01:25,680
+ama bunlar Claude Code'un senin adına
+yapabileceği her aksiyonu tanımlıyor.
+
+27
+00:01:25,840 --> 00:01:28,820
+Yani bash, edit, read, agent, webfetch.
+
+28
+00:01:28,960 --> 00:01:29,860
+Daha bir sürü var.
+
+29
+00:01:29,940 --> 00:01:31,520
+Hepsi dokümantasyonumuzda, tüm tool'lar.
+
+30
+00:01:31,900 --> 00:01:35,520
+Her biri, tabii burada
+farklı şekilde görselleştirilmiş,
+
+31
+00:01:35,580 --> 00:01:36,960
+ama aslında bir JSON schema.
+
+32
+00:01:37,120 --> 00:01:40,780
+Yani isim, açıklama ve
+bu prompt'un aldığı input yapısı var.
+
+33
+00:01:41,300 --> 00:01:45,440
+Model bunu okuyup görüyor ki,
+tamam, bir şey yapmak istersem,
+
+34
+00:01:45,580 --> 00:01:48,980
+harness bir bash komutu ya da
+edit komutu çalıştırabilir.
+
+35
+00:01:49,080 --> 00:01:49,820
+Bilmek güzel.
+
+36
+00:01:50,140 --> 00:01:51,480
+Yine, model bunu çalıştıramaz.
+
+37
+00:01:51,540 --> 00:01:53,540
+Model sadece harness'a geri gönderir,
+
+38
+00:01:53,660 --> 00:01:54,580
+ama birazdan göreceğiz.
+
+39
+00:01:55,960 --> 00:01:57,620
+Sonra bir de system prompt var,
+
+40
+00:01:57,620 --> 00:02:00,060
+ve bu doğrudan Claude Code'un
+içine hard-coded.
+
+41
+00:02:01,440 --> 00:02:03,280
+Anthropic bunu harness'a ekliyor,
+
+42
+00:02:03,620 --> 00:02:06,920
+ve bu modele kim olduğunu söylüyor,
+
+43
+00:02:06,980 --> 00:02:08,780
+nasıl bir tonu olması gerektiğini,
+
+44
+00:02:08,880 --> 00:02:10,840
+kodlama kurallarını, güvenlik kurallarını,
+
+45
+00:02:10,840 --> 00:02:13,560
+Anthropic olarak dayatmak
+istediğimiz her şeyi.
+
+46
+00:02:14,540 --> 00:02:16,780
+Bir de senin ortamın var.
+
+47
+00:02:17,080 --> 00:02:20,140
+Yani kodlama session'ının tüm ortamı.
+
+48
+00:02:20,280 --> 00:02:22,380
+İşletim sistemi, shell'in,
+
+49
+00:02:22,380 --> 00:02:26,400
+hangi modeli çalıştırdığın,
+Git branch'in, bunların hepsi.
+
+50
+00:02:26,620 --> 00:02:30,480
+Claude Code bunu her session
+başlattığında yakalıyor.
+
+51
+00:02:31,120 --> 00:02:32,120
+Tamam, son olarak da,
+
+52
+00:02:32,240 --> 00:02:34,220
+ki bizim için en önemlisi bu,
+
+53
+00:02:34,220 --> 00:02:37,060
+messages array ya da conversation array.
+
+54
+00:02:37,640 --> 00:02:40,140
+Burada görüyorsun,
+kendi prompt'umuz var,
+
+55
+00:02:40,240 --> 00:02:42,040
+"calc için test ekle" var.
+
+56
+00:02:43,160 --> 00:02:46,340
+Ama bir de CLAUDE.md dosyasının
+içeriği var,
+
+57
+00:02:46,380 --> 00:02:47,640
+tabii CLAUDE.md dosyamız varsa,
+
+58
+00:02:48,540 --> 00:02:53,620
+ve projemizde olabilecek
+tüm skill'lerin listesi.
+
+59
+00:02:53,840 --> 00:02:55,420
+Skill'lerden birazdan
+daha çok bahsedeceğiz,
+
+60
+00:02:55,500 --> 00:02:58,440
+ama bu bir skill listesi,
+sadece isimleri ve açıklamaları.
+
+61
+00:02:59,100 --> 00:03:00,620
+Bu bir tür progressive disclosure.
+
+62
+00:03:00,800 --> 00:03:02,420
+Bunu birazdan daha detaylı konuşacağız.
+
+63
+00:03:02,420 --> 00:03:05,480
+Yani modele gönderdiğimiz ilk mesajda
+
+64
+00:03:05,480 --> 00:03:07,400
+CLAUDE.md dosyamızın içeriği de var,
+
+65
+00:03:07,840 --> 00:03:09,720
+skill'ler de, ve son olarak prompt'umuz.
+
+66
+00:03:11,300 --> 00:03:13,440
+Tabii gerçekte bu
+şöyle bir şeye benziyor.
+
+67
+00:03:13,480 --> 00:03:15,520
+SDK'mızı falan kullandıysan,
+
+68
+00:03:15,720 --> 00:03:17,580
+bu yapıya çok aşina olman lazım.
+
+69
+00:03:17,800 --> 00:03:21,520
+Bu sadece messages API'ye giden
+bir JSON request body.
+
+70
+00:03:22,520 --> 00:03:27,560
+Söylemek istediğim ince bir nokta var:
+model JSON okumuyor.
+
+71
+00:03:27,620 --> 00:03:31,700
+Bunu içeride token'lara çevirmek
+API'nin işi.
+
+72
+00:03:32,360 --> 00:03:35,460
+Model sadece bu token'ları anlıyor,
+düz JSON'ı değil tabii.
+
+73
+00:03:35,680 --> 00:03:39,460
+Ama o API tarafının işi,
+Anthropic API ya da Bedrock, bunlar.
+
+74
+00:03:39,820 --> 00:03:44,180
+Neyse, sonunda request API'ye gönderiliyor.
+
+75
+00:03:44,340 --> 00:03:47,840
+Şimdi model request'i görüyor
+ve akıl yürütmeye başlıyor.
+
+76
+00:03:48,040 --> 00:03:49,740
+Derlenmiş prompt'un tamamını görüyor.
+
+77
+00:03:49,860 --> 00:03:53,160
+Diyor ki, kullanıcı utils.ts'e
+bir test eklemek istiyor,
+
+78
+00:03:53,380 --> 00:03:56,520
+ama derlenmiş prompt'umuzun hiçbir yerine
+bu dosyayı henüz eklememişiz.
+
+79
+00:03:57,280 --> 00:03:58,520
+Yani bir şey yapamaz.
+
+80
+00:03:58,740 --> 00:04:04,080
+Ama gördüğü şu: tool schema'mızda
+bir read tool call var.
+
+81
+00:04:04,380 --> 00:04:06,740
+Yani anlıyor ki, tamam,
+bir şeye erişimim yoksa
+
+82
+00:04:06,880 --> 00:04:08,540
+bu read tool call'ı kullanırım.
+
+83
+00:04:08,980 --> 00:04:14,680
+Yani modelin ya da API'nin cevabı,
+bu tool call'ı içeren bir assistant message.
+
+84
+00:04:14,880 --> 00:04:16,820
+Network'te "tool use" diye görebilirsin.
+
+85
+00:04:18,100 --> 00:04:22,340
+Bu da yine harness'a bu dosyayı
+okumak istediğinin sinyali.
+
+86
+00:04:24,100 --> 00:04:26,300
+İşte ilk mesaj böyle başlıyor.
+
+87
+00:04:26,300 --> 00:04:32,320
+Ancak API cevap verdikten sonra
+CLI'da o read tool call'ı görürsün.
+
+88
+00:04:32,880 --> 00:04:36,960
+Perde arkasında bu fs.readFile
+ya da ne kullanıyorsan onu çalıştırabilir, bun mesela.
+
+89
+00:04:37,520 --> 00:04:40,660
+Ama bu yine harness'ın işi,
+çünkü fs.readFile'ı o kullanabiliyor.
+
+90
+00:04:42,140 --> 00:04:44,840
+Sonunda dosya içeriği de
+bir tool result olarak geri geliyor.
+
+91
+00:04:44,960 --> 00:04:48,960
+Ve her şey başarılı olunca,
+tüm o prompt'u yeniden derliyor,
+
+92
+00:04:48,960 --> 00:04:51,480
+aynı mesajlar ve
+yukarıdaki her şeyle birlikte.
+
+93
+00:04:51,560 --> 00:04:52,780
+Sadece kalabalık yapmak istemedim.
+
+94
+00:04:52,800 --> 00:04:54,140
+Ama bu tıpatıp aynı görünmeli.
+
+95
+00:04:54,140 --> 00:04:58,320
+Buraya eklenen tek şey, yine,
+messages array'e giden assistant message
+
+96
+00:04:58,320 --> 00:05:00,160
+ve şimdi bir de tool result.
+
+97
+00:05:00,160 --> 00:05:05,240
+Bu durumda, bunun az önce okuduğu dosyanın
+içeriği olduğunu düşünebilirsin.
+
+98
+00:05:05,400 --> 00:05:07,540
+Şunu anla, bu tabii ki
+bir çeşit pseudocode.
+
+99
+00:05:08,180 --> 00:05:10,180
+Normalde bunlar sadece JSON objeleri.
+
+100
+00:05:10,180 --> 00:05:11,380
+Bunu çok literal alma.
+
+101
+00:05:11,860 --> 00:05:13,320
+Daha çok fikri vermek için.
+
+102
+00:05:14,020 --> 00:05:17,040
+Plan mode bir çeşit permission mode gibi.
+
+103
+00:05:17,040 --> 00:05:20,120
+Claude'a diyoruz ki,
+hey, henüz kod yazma.
+
+104
+00:05:20,120 --> 00:05:20,980
+Hiçbir şeye dokunma.
+
+105
+00:05:22,160 --> 00:05:27,900
+Ama o loop diyagramını hatırlayın:
+model bir tool call üretiyor, harness çalıştırıyor.
+
+106
+00:05:28,280 --> 00:05:31,400
+Peki çalıştırdığı şeyin gerçekten
+istediğimiz şey olduğunu nereden biliyoruz?
+
+107
+00:05:31,400 --> 00:05:36,380
+İşte .claude/settings.json'da
+belirli permission'lar tanımlayabiliyoruz.
+
+108
+00:05:36,740 --> 00:05:42,860
+Bunu workshop'ın başlarına koydum çünkü Claude Code
+üzerinde sahip olduğun kontrolü anlaman önemli
+
+109
+00:05:42,860 --> 00:05:46,740
+ve makinende istemediğin hiçbir şeyi
+çalıştırmayacağından emin olmalısın.
+
+110
+00:05:47,320 --> 00:05:49,280
+İlk olarak bir allow list var.
+
+111
+00:05:49,440 --> 00:05:52,280
+Bu, hiç sormadan çalışan şeylerin listesi.
+
+112
+00:05:52,280 --> 00:06:01,520
+Mesela şimdi burada bir komut çalıştırsam,
+"design" ya da sadece "dark mode yap" desem.
+
+113
+00:06:03,400 --> 00:06:05,260
+Henüz hiç permission eklemedim.
+
+114
+00:06:05,360 --> 00:06:12,800
+Umarım bana soracak, evet, işte, düzenleyebilir mi diye,
+çünkü henüz bir şeyi düzenlemesine izin vermedim.
+
+115
+00:06:13,020 --> 00:06:17,020
+Ama açıkçası böyle başında beklemek
+biraz sinir bozucu.
+
+116
+00:06:17,060 --> 00:06:18,180
+Diyorum ki, evet, eminim sorun yok.
+
+117
+00:06:18,240 --> 00:06:19,700
+Eminim iyi iş çıkaracaksın.
+
+118
+00:06:20,540 --> 00:06:26,140
+Yani ya auto mode'a alırız,
+ama permission'lar biraz daha bilinçli.
+
+119
+00:06:26,620 --> 00:06:27,480
+İlk olarak allow list var.
+
+120
+00:06:27,520 --> 00:06:30,900
+Diyebiliriz ki, tamam, tool call
+"npm run" ise, hadi yap.
+
+121
+00:06:30,940 --> 00:06:31,780
+Bana sorma.
+
+122
+00:06:31,920 --> 00:06:35,020
+git commit ise, belki
+onu hep okey görüyorsundur.
+
+123
+00:06:35,160 --> 00:06:36,920
+Ama git push ise, lütfen yapma.
+
+124
+00:06:37,000 --> 00:06:38,540
+Remote'larıma dokunma.
+
+125
+00:06:38,660 --> 00:06:39,160
+Bu iyi.
+
+126
+00:06:40,020 --> 00:06:44,580
+Hep sorulmasını istiyorsan, mesela silme,
+açıkçası ben onu hep ask'te tutuyorum.
+
+127
+00:06:44,680 --> 00:06:49,320
+Deny'da tutmak sinir bozucu çünkü sonunda
+silinmesi gereken bir sürü eski dosyayla kalıyorsun.
+
+128
+00:06:50,060 --> 00:06:53,700
+Yani bir RM varsa, sadece sor.
+Bir de default mode koyabilirsin.
+
+129
+00:06:55,420 --> 00:06:55,860
+Tamam.
+
+130
+00:06:56,320 --> 00:07:02,000
+Bence en iyisi bunu built-in slash command'ımız
+olan permissions ile kontrol etmek.
+
+131
+00:07:02,320 --> 00:07:04,780
+Müsaadenizle bundan çıkayım.
+
+132
+00:07:05,540 --> 00:07:07,640
+Burada permissions çalıştırabiliriz.
+
+133
+00:07:08,880 --> 00:07:12,300
+Burada istersen yeni bir kural ekleyebilirsin.
+
+134
+00:07:12,440 --> 00:07:13,920
+Diğer kuralları da görebilirsin.
+
+135
+00:07:14,700 --> 00:07:25,960
+Tek sinir bozucu şey, hangi tool'ların olduğunu ve
+bu permission tipi kodu nasıl yazacağını bilmen gerekiyor.
+
+136
+00:07:26,660 --> 00:07:29,160
+Ama bu permission kurallarını eklemenin
+çok kolay bir yolu.
+
+137
+00:07:29,300 --> 00:07:31,920
+Yoksa bunu açıkça elle yapmamız gerekir.
+
+138
+00:07:32,140 --> 00:07:41,700
+.claude, settings.json'a gideriz ve burada
+deny, ask, bunların hepsi olabilir.
+
+139
+00:07:42,540 --> 00:07:45,680
+Ama az önce başka bir komut ekledik,
+onu çok seviyorum.
+
+140
+00:07:46,900 --> 00:07:48,160
+Yeniden başlatayım.
+
+141
+00:07:48,500 --> 00:07:50,280
+O da /fewer-permission-prompts.
+
+142
+00:07:51,200 --> 00:07:53,760
+Ne yaptığını göstereyim.
+
+143
+00:07:53,800 --> 00:07:57,400
+Bu yepyeni bir laptop,
+o yüzden bir şey bulacak mı merak ediyorum.
+
+144
+00:07:57,760 --> 00:08:03,980
+Tüm transcript'lerini tarıyor ve en çok
+sorulan tool call'ları bulmaya çalışıyor.
+
+145
+00:08:04,400 --> 00:08:10,520
+Yani birkaç session çalıştırdıysan ve diyorsan ki,
+hep aynı tool call'ları görüyorum, hep izin veriyorum,
+
+146
+00:08:10,520 --> 00:08:13,040
+ama bunu permission'larıma nasıl eklerim?
+
+147
+00:08:13,680 --> 00:08:15,720
+/fewer-permission-prompts bunun için çok iyi.
+
+148
+00:08:15,820 --> 00:08:17,040
+Bakalım ne çıkmış.
+
+149
+00:08:17,400 --> 00:08:17,940
+İşte burada.
+
+150
+00:08:18,720 --> 00:08:24,800
+Görmüş ki linear MCP server'ımı ve
+bash bun run type check'i sürekli kabul ediyorum.
+
+151
+00:08:25,100 --> 00:08:28,600
+Bunlardan ikisini settings.json'ıma eklemiş,
+ben hiç dokunmadan.
+
+152
+00:08:28,860 --> 00:08:31,560
+Birkaçını da atlamış,
+ve nedenini de söylüyor.
+
+153
+00:08:32,980 --> 00:08:34,880
+Talimatlar diyor ki,
+şüphedeysen ekleme.
+
+154
+00:08:35,820 --> 00:08:38,540
+Zaten Claude tarafından otomatik izinli,
+yani kural gerekmiyor.
+
+155
+00:08:38,540 --> 00:08:41,820
+Yani eklediği şeyler konusunda
+çok tutucu.
+
+156
+00:08:41,920 --> 00:08:44,880
+Hâlâ düşünüyor: tamam,
+izin verdiğim şey gerçekten güvenli mi?
+
+157
+00:08:45,060 --> 00:08:47,380
+Gereksiz mi acaba?
+
+158
+00:08:47,600 --> 00:08:48,480
+Eklememeli miyim?
+
+159
+00:08:49,220 --> 00:08:50,920
+Neyse, sadece buna dikkat çekmek istedim.
+
+160
+00:08:51,060 --> 00:08:54,980
+Çünkü bir süredir Claude Code kullanıyorsan,
+workflow'una çok faydalı olabilecek
+
+161
+00:08:54,980 --> 00:08:57,820
+bir sürü yeni sayılabilecek komut var.
+
+162
+00:08:59,440 --> 00:09:07,480
+Bir soru: ayarlar, sanırım hem kişisel global
+ayar olarak hem de proje bazında var,
+
+163
+00:09:07,900 --> 00:09:09,940
+birbirleriyle çakışırlarsa ne oluyor?
+
+164
+00:09:10,640 --> 00:09:15,560
+En üstteki öncelikli oluyor,
+anlatabildim mi?
+
+165
+00:09:15,600 --> 00:09:20,320
+Managed settings'te bir şey varsa, yani
+en tepede enterprise'da, o hep öncelikli olur.
+
+166
+00:09:20,480 --> 00:09:23,080
+Sonra user gelir,
+sonra aşağı, proje seviyesine iner.
+
+167
+00:09:23,420 --> 00:09:33,080
+Yani temelde şunu garanti etmek istiyoruz: bir ekip üyesinin
+permission'ları, ekibinin ya da şirketinin kurduğunu ezemesin.
+
+168
+00:09:33,540 --> 00:09:35,540
+Yani en yukarıdaki kazanıyor.
+
+169
+00:09:35,540 --> 00:09:44,560
+Bu anlamda neredeyse ters hiyerarşi gibi:
+root'a en yakın olan kazanıyor, sonra aşağı iniyor.
+
+170
+00:09:45,140 --> 00:09:54,140
+Buraya bir deny rule ekleyeyim, belki bash ile, ya da
+aslında edit package.json ile ekleyeyim, ne olacak göreyim.
+
+171
+00:09:56,620 --> 00:09:57,700
+Off, git.
+
+172
+00:09:58,420 --> 00:10:00,080
+Ha, çünkü bunu benim için oluşturmuşlar, değil mi?
+
+173
+00:10:00,180 --> 00:10:00,780
+Dur, kaydetme.
+
+174
+00:10:01,300 --> 00:10:04,820
+Bunlar Claude'un benim için yaptığı ayarlar,
+ki bu aslında çok güzel.
+
+175
+00:10:05,540 --> 00:10:08,280
+Ama şimdi bir deny rule eklemek
+ve ne olacağını görmek istiyorum.
+
+176
+00:10:08,360 --> 00:10:17,660
+Diyelim edit package.json'ı deny etmek istiyorum,
+ve yine de Claude'dan onu düzenlemesini isteyeceğim.
+
+177
+00:10:18,140 --> 00:10:22,320
+Modeli haiku'ya çevireyim,
+çünkü bu çok basit bir iş.
+
+178
+00:10:22,380 --> 00:10:22,780
+Sorun olmaz.
+
+179
+00:10:23,180 --> 00:10:32,380
+Diyeceğim ki, package.json'daki versiyonu,
+şu an ne bilmiyorum, bire güncelle.
+
+180
+00:10:35,540 --> 00:10:39,920
+Umarım permission'larım doğru kurulmuştur
+ve "bunu yapamam" der.
+
+181
+00:10:40,700 --> 00:10:40,900
+Hop.
+
+182
+00:10:46,200 --> 00:10:47,020
+Yok say işte.
+
+183
+00:10:48,700 --> 00:10:52,740
+Ya da aslında emin değilim, acaba
+permission'ları yok saymasını mı söyledim.
+
+184
+00:10:52,880 --> 00:10:53,840
+Göreceğiz, umarım hayır.
+
+185
+00:10:54,600 --> 00:10:54,820
+Hayır.
+
+186
+00:10:56,920 --> 00:10:58,660
+Evet, diyor ki, bunu yapamam.
+
+187
+00:10:58,700 --> 00:11:02,780
+Yani modelden gelen bir tool call
+bile olsa, çalıştırmayacak.
+
+188
+00:11:02,880 --> 00:11:08,500
+Bu, Claude'un ortamında ne yapıp yapamayacağı
+üzerinde kontrol kazanmanın harika bir yolu.
+
+189
+00:11:09,240 --> 00:11:14,780
+Davranışı CLAUDE.md ile nasıl şekillendireceğimizi,
+permission'larla nasıl garanti edeceğimizi gördük.
+
+190
+00:11:15,480 --> 00:11:17,420
+Ama ikisi de bir çeşit pasif.
+
+191
+00:11:18,460 --> 00:11:25,520
+Claude Code'da atmak istediğimiz bir sürü workflow
+ya da adım var, ve bunu defalarca yapmak istiyoruz.
+
+192
+00:11:26,860 --> 00:11:29,340
+İşte o durumda skill'leri kullanabiliriz.
+
+193
+00:11:29,560 --> 00:11:33,920
+Bir skill, belirli bir prosedür içeren
+bir markdown dosyasından ibaret.
+
+194
+00:11:34,180 --> 00:11:37,620
+Yani yoksa Claude'a her seferinde
+yeniden anlatman gereken bir şey.
+
+195
+00:11:37,720 --> 00:11:43,140
+Tekrar eden, çok adımlı,
+ve bu durumda projemize özel.
+
+196
+00:11:43,400 --> 00:11:51,000
+Bu deployment, entegrasyonlar, bir Q&A loop'u,
+defalarca yapmak istediğin herhangi bir şey olabilir,
+
+197
+00:11:51,000 --> 00:11:55,400
+ama aynı prompt'u tekrar tekrar
+yazmak istemiyorsun.
+
+198
+00:11:56,540 --> 00:12:04,200
+Kendim yazmaya başlamadan önce,
+kullanmayı sevdiğim güzel bir prompt var: skill creator.
+
+199
+00:12:06,340 --> 00:12:08,380
+Sanırım bu Claude Code'a built-in.
+
+200
+00:12:08,480 --> 00:12:13,920
+Bazen ortamıma farklı plugin'ler ekliyorum, sonra
+bu built-in miydi ben mi ekledim unutuyorum.
+
+201
+00:12:14,000 --> 00:12:15,340
+Sanırım bu built-in.
+
+202
+00:12:16,060 --> 00:12:19,940
+Ve bu, kendi skill'lerini eklemeyi
+inanılmaz kolaylaştırıyor.
+
+203
+00:12:20,420 --> 00:12:23,800
+Bunda diyor ki,
+hangi skill üzerinde çalışmak istersin?
+
+204
+00:12:24,580 --> 00:12:29,540
+Çok basit bir code reviewer
+skill'i deneyeyim.
+
+205
+00:12:31,300 --> 00:12:33,400
+Çok fazla şey yapmasını istemiyorum.
+
+206
+00:12:33,460 --> 00:12:34,820
+Sadece ne çıkaracağını görmek istiyorum.
+
+207
+00:12:34,960 --> 00:12:42,920
+Şunu da göstermek istiyorum: bir sorun ya da örnek varsa,
+aklına ilk gelen şey şu olmalı: Claude Code bunu zaten otomatikleştirdi mi?
+
+208
+00:12:43,000 --> 00:12:45,980
+Yoksa gerçekten kod tabanına girip
+kendim mi yazmam lazım?
+
+209
+00:12:46,220 --> 00:12:49,920
+Bu soruların çoğunda Claude'a sorup
+senin için yapmasını sağlayabilirsin.
+
+210
+00:12:50,420 --> 00:12:52,140
+Yani bir çeşit zihniyet güncellemesi.
+
+211
+00:12:52,280 --> 00:12:56,320
+Şöyle: günlük hayatımın ne kadarını
+bu şekilde Claude'a devredebilirim?
+
+212
+00:12:56,600 --> 00:13:00,040
+Güzel olan şu: bir skill içinde
+bir sürü konfigürasyon seçeneğimiz var.
+
+213
+00:13:00,260 --> 00:13:01,620
+Burada modeli de ayarlayabiliriz.
+
+214
+00:13:02,360 --> 00:13:04,060
+Bu durumda sadece kod review ediyor.
+
+215
+00:13:04,240 --> 00:13:05,960
+O yüzden diyebilirim ki, hep Sonnet kullan.
+
+216
+00:13:06,060 --> 00:13:09,840
+Ben Opus'ta olsam bile, bu skill her
+çağrıldığında Sonnet kullanmasını istiyorum.
+
+217
+00:13:11,440 --> 00:13:12,960
+Ya da bazı durumlarda Haiku.
+
+218
+00:13:13,480 --> 00:13:24,380
+Şu da güzel: model kodumuzu asla review etmesin, sadece
+slash command olsun istiyorsak, Disable Model Invocation var.
+
+219
+00:13:24,780 --> 00:13:25,200
+True.
+
+220
+00:13:25,400 --> 00:13:30,760
+Bunu ayarlayınca modele göndermiyoruz,
+sadece lokalde tutuyoruz.
+
+221
+00:13:31,360 --> 00:13:35,300
+Yani model bu skill'i asla çağıramaz,
+sadece biz slash command olarak kullanırız.
+
+222
+00:13:36,240 --> 00:13:42,600
+Tam tersini istiyorsak, sadece model yapsın
+istiyorsak, UserInvocable, False yapabiliriz.
+
+223
+00:13:42,840 --> 00:13:46,620
+Ve açıkçası biliyorum,
+bu tek bir frontmatter ayarı olmalıydı.
+
+224
+00:13:46,800 --> 00:13:49,120
+İki tane, ve birbirlerini
+bir nevi olumsuzluyorlar.
+
+225
+00:13:49,660 --> 00:13:51,860
+Şimdilik kabullenin,
+değiştirebiliriz.
+
+226
+00:13:52,300 --> 00:13:59,120
+Ama bunu yapınca, sadece bunu ekleyince,
+artık az önce çalıştırdığımız gibi bir slash command değil.
+
+227
+00:13:59,220 --> 00:14:00,360
+Sadece model yapabilir.
+
+228
+00:14:01,200 --> 00:14:04,100
+İşte skill'ler üzerinde
+böyle daha çok kontrol kazanıyorsun.
+
+229
+00:14:04,760 --> 00:14:08,340
+Güzel bir şey daha:
+ona argüman geçebiliyorsun.
+
+230
+00:14:08,580 --> 00:14:13,400
+Bu da normal argüman
+söz dizimiyle oluyor.
+
+231
+00:14:14,060 --> 00:14:19,540
+Mesela şöyle bir skill'imiz olsa:
+find, bilmiyorum, arguments, bugs.
+
+232
+00:14:19,820 --> 00:14:31,240
+Ya da bir deploy skill'imiz olsa, deploy gibi bir şey,
+ve bu kod tabanımızı ya staging'e ya production'a deploy etsin.
+
+233
+00:14:32,840 --> 00:14:35,800
+Evet, bunun için Sonnet kullanabiliriz,
+ve sadece deploy diyebiliriz.
+
+234
+00:14:36,680 --> 00:14:45,560
+Mesela önce testleri çalıştır,
+uygulamayı bundle et, ortamımıza deploy et.
+
+235
+00:14:45,560 --> 00:14:50,920
+Yine, hiçbir şey kurulu değil, o yüzden Claude'a
+sorduğumda "ne yapmam gerekiyor" diyecek.
+
+236
+00:14:51,000 --> 00:14:52,920
+Test yok, ve deploy edemiyorum.
+
+237
+00:14:54,720 --> 00:14:57,460
+Ama burada şunu da diyebilirsin:
+şuraya deploy et, mesela arguments.
+
+238
+00:14:59,060 --> 00:15:11,040
+Şimdi şunu yapabilirim: hızlıca bunun adını
+deploy diye değiştirip plugin'leri yeniden yükleyeyim.
+
+239
+00:15:13,040 --> 00:15:15,980
+Deploy'u çalıştırırsam, mesela
+"deploy staging" diyebilirim.
+
+240
+00:15:16,460 --> 00:15:18,700
+Ve artık skill'lerimizde
+hep staging'e deploy edecek.
+
+241
+00:15:18,980 --> 00:15:20,880
+Yani bunu çok faydalı buluyorum.
+
+242
+00:15:20,960 --> 00:15:22,260
+Skill'ler üzerinde
+bir sürü kontrolün var.

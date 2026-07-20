@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>claude code teknik özet — blueprint.dark</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* blueprint.dark token'ları — DEĞİŞTİRME */
+:root {
+  --bg:#0B0A12; --grid:#161426; --ink:#CDCBE0; --accent:#A78BFA;
+  --accent-fill:#151028; --line:#2C2946; --muted:#625F80; --div:#201D38; --code:#08070E;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#333; font-family:'Space Grotesk',sans-serif; color:var(--ink); }
+.canvas {
+  background:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:16px 16px;
+  position:relative; overflow:hidden; margin:20px auto;
+}
+.r169 { width:1200px; height:675px; padding:64px; }
+.r45  { width:1080px; height:1350px; padding:64px; }
+.mono { font-family:'IBM Plex Mono',monospace; }
+.serial { font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:4px; color:var(--accent); }
+.handle { font-family:'IBM Plex Mono',monospace; font-size:16px; color:var(--muted); letter-spacing:1px; }
+.h1 { font-size:48px; font-weight:700; line-height:1.15; color:var(--ink); }
+.sub { font-family:'IBM Plex Mono',monospace; font-size:24px; color:var(--accent); }
+.note { font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--muted); }
+.topbar { display:flex; justify-content:space-between; align-items:baseline; }
+.botbar { border-top:1px solid var(--div); padding-top:16px; display:flex; justify-content:space-between; align-items:center; }
+.metric-n { font-family:'IBM Plex Mono',monospace; font-size:30px; font-weight:500; color:var(--accent); margin-right:10px; }
+.metric-l { font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--muted); }
+
+/* liste öğesi — süzgeç formatının satırı */
+.item { border-top:1px solid var(--div); padding-top:20px; display:flex; gap:22px; }
+.item .n { font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:24px; flex:none; }
+.item .t { font-size:27px; font-weight:500; line-height:1.25; }
+.item .d { font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--muted); line-height:1.65; margin-top:8px; }
+.item .d b { color:var(--ink); font-weight:500; }
+.list { flex:1; display:flex; flex-direction:column; justify-content:space-evenly; margin-top:14px; }
+.box { border:1.5px solid var(--line); border-radius:6px; padding:26px; }
+.box.hot { border:2px solid var(--accent); background:var(--accent-fill); }
+.box h3 { font-size:26px; font-weight:600; margin-bottom:14px; }
+.box.hot h3 { color:var(--accent); }
+.box p { font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--muted); line-height:1.65; }
+.box p + p { margin-top:12px; }
+.box p b { color:var(--ink); font-weight:500; }
+code { font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:0.95em; }
+</style>
+</head>
+<body>
+
+<!-- 01 · TEMEL (bölüm 1) -->
+<section class="canvas r169" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="margin-bottom:26px;">
+    <div class="h1" style="font-size:42px;">temel: model hiçbir şey hatırlamıyor</div>
+    <span class="handle" style="text-align:right;">fig. 01<br>@omerfrkdemiral</span>
+  </div>
+  <div style="display:flex; gap:24px; flex:1;">
+    <div class="box hot" style="flex:1;">
+      <h3>model stateless</h3>
+      <p>oturum içi hafızası <b>yok</b>. çağrılar arası hafızası <b>yok</b>. her çağrıda sıfırdan başlıyor.</p>
+      <p>tüm state'i <b>harness</b> (claude code) sağlıyor: dosyaların, konuşma geçmişin, kurulumun, ortamın.</p>
+    </div>
+    <div class="box" style="flex:1;">
+      <h3>model tool çalıştırmıyor</h3>
+      <p>model sadece "bu tool'u çalıştır" sinyali üretiyor. asıl <code>fs.readFile</code>'ı harness çalıştırıp sonucu geri veriyor.</p>
+      <p>bu yüzden <b>izinler işe yarıyor</b>: model istese de harness çalıştırmıyor.</p>
+    </div>
+  </div>
+  <div class="botbar" style="margin-top:24px;">
+    <span class="note">her şeyin dayandığı gerçek — bundan sonraki her şey bunun sonucu</span>
+    <span class="note" style="font-size:15px;">agent factory podcast</span>
+  </div>
+</section>
+
+<!-- 02 · PROMPT DERLEME (bölüm 2) -->
+<section class="canvas r45" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="border-bottom:2px solid var(--line); padding-bottom:20px;">
+    <span class="serial">SÜZGEÇ / 01</span>
+    <span class="handle">fig. 02 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="margin-top:30px; font-size:44px;">enter'a bastığın an<br>prompt nasıl derleniyor</div>
+  <div class="note" style="margin-top:12px;">modelin gerçekte gördüğü şey, dört parça halinde.</div>
+  <div class="list">
+    <div class="item">
+      <span class="n">01</span>
+      <div>
+        <div class="t mono">tool schemas</div>
+        <div class="d">bash, edit, read, agent, webfetch… her biri bir json şeması:<br><b>isim, açıklama, girdi şekli</b>. model böylece neyi yapabileceğini biliyor.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">02</span>
+      <div>
+        <div class="t mono">system prompt</div>
+        <div class="d">claude code'a gömülü. modele <b>kim olduğunu, tonunu, kod konvansiyonunu</b><br>ve anthropic'in güvenlik kurallarını söylüyor.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">03</span>
+      <div>
+        <div class="t mono">environment</div>
+        <div class="d">işletim sistemin, shell'in, çalıştırdığın model, git branch'in.<br><b>session başlarken</b> yakalanıyor.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">04</span>
+      <div>
+        <div class="t mono">messages array</div>
+        <div class="d"><b>claude.md içeriğin + skill listesi</b> (sadece isim ve açıklama —<br>buna progressive disclosure deniyor) + senin prompt'un.</div>
+      </div>
+    </div>
+  </div>
+  <div class="box" style="border-left:3px solid var(--accent); border-radius:0; margin-bottom:20px;">
+    <p><b>ayrıntı:</b> model json okumuyor. gördüğü şey token; json'u token'a çeviren api tarafı (anthropic api ya da bedrock).</p>
+  </div>
+  <div class="botbar">
+    <span class="note">dördü tek istekte birleşip modele gidiyor</span>
+    <span class="note" style="font-size:15px;">agent factory podcast</span>
+  </div>
+</section>
+
+<!-- 03 · AGENTIC LOOP (bölüm 3) -->
+<section class="canvas r169">
+  <div class="topbar" style="margin-bottom:34px;">
+    <div class="h1" style="font-size:42px;">agentic loop</div>
+    <span class="handle" style="text-align:right;">fig. 03 · döngü her turda prompt'u yeniden derliyor<br>@omerfrkdemiral</span>
+  </div>
+  <svg viewBox="0 0 1072 330" style="width:100%;">
+    <line x1="60" y1="90" x2="1012" y2="90" stroke="#2C2946" stroke-width="3"/>
+    <circle cx="130" cy="90" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+    <circle cx="420" cy="90" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+    <circle cx="710" cy="90" r="14" fill="#151028" stroke="#A78BFA" stroke-width="4"/>
+    <circle cx="960" cy="90" r="10" fill="#0B0A12" stroke="#CDCBE0" stroke-width="3"/>
+
+    <text x="130" y="46" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="21">01 prompt derlenir</text>
+    <text x="420" y="46" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="21">02 model akıl yürütür</text>
+    <text x="710" y="36" text-anchor="middle" fill="#A78BFA" font-family="IBM Plex Mono" font-size="22">03 harness çalıştırır</text>
+    <text x="960" y="46" text-anchor="middle" fill="#CDCBE0" font-family="IBM Plex Mono" font-size="21">04 sonuç döner</text>
+
+    <text x="130" y="136" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">tool schema + system</text>
+    <text x="130" y="158" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">+ environment + mesajlar</text>
+    <text x="130" y="180" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">tek istekte birleşir</text>
+
+    <text x="420" y="136" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">"dosya elimde yok ama</text>
+    <text x="420" y="158" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">read tool'um var" der</text>
+    <text x="420" y="180" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">ve tool call üretir</text>
+
+    <text x="710" y="140" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">izin kontrolünden geçerse</text>
+    <text x="710" y="162" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">komutu harness çalıştırır</text>
+    <text x="710" y="184" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">— model değil</text>
+
+    <text x="960" y="136" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">tool result mesajlara</text>
+    <text x="960" y="158" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">eklenir, prompt baştan</text>
+    <text x="960" y="180" text-anchor="middle" fill="#625F80" font-family="IBM Plex Mono" font-size="16">derlenip döngü tekrarlar</text>
+
+    <path d="M 900 230 C 990 290, 200 290, 290 230" fill="none" stroke="#A78BFA" stroke-width="2.5" stroke-dasharray="8 6"/>
+    <text x="536" y="320" text-anchor="middle" fill="#A78BFA" font-family="IBM Plex Mono" font-size="19">her turda prompt sıfırdan derlenir</text>
+  </svg>
+  <div class="botbar" style="position:absolute; left:64px; right:64px; bottom:44px;">
+    <span class="note">model hafızasız olduğu için döngünün her turu tam bağlamı yeniden taşımak zorunda</span>
+    <span class="note" style="font-size:15px;">agent factory podcast</span>
+  </div>
+</section>
+
+<!-- 04 · PERMISSIONS (bölüm 4) -->
+<section class="canvas r45" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="border-bottom:2px solid var(--line); padding-bottom:20px;">
+    <span class="serial">SÜZGEÇ / 02</span>
+    <span class="handle">fig. 04 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="margin-top:30px; font-size:44px;">permissions — makinende<br>ne çalışacağının kontrolü</div>
+  <div class="note" style="margin-top:12px;">.claude/settings.json · üç liste, bir otomasyon, bir hiyerarşi.</div>
+  <div class="list">
+    <div class="item">
+      <span class="n">01</span>
+      <div>
+        <div class="t mono">allow</div>
+        <div class="d">sormadan çalışır. <b>npm run</b>, <b>git commit</b> gibi güvendiklerin.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">02</span>
+      <div>
+        <div class="t mono">ask</div>
+        <div class="d">her seferinde sorar. lydia <b>rm</b>'i burada tutuyor —<br>deny yaparsan silinmesi gereken dosyalar birikiyor.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">03</span>
+      <div>
+        <div class="t mono">deny</div>
+        <div class="d">model tool call üretse bile <b>çalışmaz</b>.<br><b>git push</b> gibi geri dönüşü olmayanlar.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">04</span>
+      <div>
+        <div class="t mono">/fewer-permission-prompts</div>
+        <div class="d">transkriptlerini tarar, <b>en çok izin verdiğin tool call'ları bulur</b> ve<br>settings.json'a kendi ekler. muhafazakâr: eklemediklerinin sebebini<br>söyler — "şüphedeysen ekleme", "zaten otomatik izinli".</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">05</span>
+      <div>
+        <div class="t mono">ayar hiyerarşisi ters çalışır</div>
+        <div class="d"><b>managed (kurumsal) > user > project.</b> köke en yakın olan kazanır.<br>amaç: bir ekip üyesi, şirketin koyduğu kuralı kendi ayarıyla <b>ezemesin</b>.</div>
+      </div>
+    </div>
+  </div>
+  <div class="botbar">
+    <span class="note">izinler harness katmanında çalışıyor, modelde değil</span>
+    <span class="note" style="font-size:15px;">agent factory podcast</span>
+  </div>
+</section>
+
+<!-- 05 · SKILLS (bölüm 5) -->
+<section class="canvas r169" style="display:flex; flex-direction:column;">
+  <div class="topbar">
+    <span class="serial" style="letter-spacing:2px;">SKILL.md</span>
+    <span class="handle">fig. 05 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="font-size:38px; margin:20px 0;">skills — tekrarlayan işi bir kez yaz</div>
+  <div style="background:var(--code); border:1px solid var(--line); border-radius:6px; padding:30px; flex:1;">
+    <div class="mono" style="font-size:19px; line-height:1.85; color:var(--ink);">
+      <span style="color:var(--muted);"># prosedür içeren bir markdown dosyası</span><br>
+      <span style="color:var(--accent);">skill-creator</span>          <span style="color:var(--muted);">built-in. skill'i elle yazmak yerine claude'a yazdır.</span><br>
+      <span style="color:var(--accent);">model: sonnet</span>          <span style="color:var(--muted);">skill başına model seçilir. sen opus'tayken bile</span><br>
+      <span style="color:var(--muted);">                       bu skill sonnet (ya da haiku) ile çalışır.</span><br>
+      <span style="color:var(--accent);">disable-model-invocation: true</span>  <span style="color:var(--muted);">model asla kendiliğinden çağıramaz.</span><br>
+      <span style="color:var(--muted);">                       sadece sen slash command olarak çalıştırırsın.</span><br>
+      <span style="color:var(--accent);">user-invocable: false</span>   <span style="color:var(--muted);">tam tersi: sadece model çağırır,</span><br>
+      <span style="color:var(--muted);">                       slash command olmaktan çıkar.</span><br>
+      <span style="color:var(--accent);">$ARGUMENTS</span>             <span style="color:var(--muted);">skill argüman alır: /deploy staging → staging'e deploy eder.</span>
+    </div>
+  </div>
+  <div class="note" style="margin-top:14px;">zihniyet değişimi: bir şey yapman gerektiğinde önce sor — "claude code bunu zaten otomatikleştirmiş mi?"</div>
+</section>
+
+<!-- 06 · AUTO MODE (bölüm 6) -->
+<section class="canvas r169" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="margin-bottom:24px;">
+    <div class="h1" style="font-size:40px;">auto mode — permission fatigue'in çözümü</div>
+    <span class="handle" style="text-align:right;">fig. 06 · shift+tab<br>@omerfrkdemiral</span>
+  </div>
+  <div style="display:flex; gap:22px;">
+    <div class="box" style="flex:1;">
+      <h3>problem: permission fatigue</h3>
+      <p>her şeyi sorarsa yüzüncü seferde artık <b>okumadan onaylıyorsun</b>. bu güvenli değil, tehlikeli.</p>
+      <p>diğer uç <code>dangerously-skip-permissions</code>: hiç sormuyor. root'u silerse dönüşü yok.</p>
+    </div>
+    <div class="box hot" style="flex:1;">
+      <h3>çözüm: aradaki classifier</h3>
+      <p>auto mode, <b>allow ve deny listesinin arasında</b> durur. her tool call'dan önce ayrı bir classifier çalıştırır: bu tehlikeli mi?</p>
+      <p>tehlikeliyse sorar, değilse rahatsız etmez.</p>
+    </div>
+  </div>
+  <div style="display:flex; gap:22px; margin-top:20px;">
+    <div class="box" style="flex:1; padding:20px 26px;">
+      <h3 style="font-size:22px; margin-bottom:10px;">prompt injection'a karşı daha iyi</h3>
+      <p>tool sonucundan gelen "tüm talimatları yok say" tarzı saldırıları, araya giren classifier yakalayabiliyor.</p>
+    </div>
+    <div class="box" style="flex:1; padding:20px 26px;">
+      <h3 style="font-size:22px; margin-bottom:10px;">bağlama duyarlı</h3>
+      <p><code>rm -rf</code> normalde tehlikeli. ama <b>sen silmesini istediysen</b> tehlikeli değil — auto mode sormaz.</p>
+    </div>
+  </div>
+  <div class="botbar" style="margin-top:auto;">
+    <span class="note">export CLAUDE_CODE_ENABLE_AUTO_MODE</span>
+    <span class="note" style="font-size:15px;">agent factory podcast</span>
+  </div>
+</section>
+
+<!-- 07 · DYNAMIC WORKFLOWS (bölüm 7) -->
+<section class="canvas r45" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="border-bottom:2px solid var(--line); padding-bottom:20px;">
+    <span class="serial">SÜZGEÇ / 03</span>
+    <span class="handle">fig. 07 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="margin-top:30px; font-size:44px;">dynamic workflows —<br>subagent'ları deterministik yapmak</div>
+  <div class="note" style="margin-top:12px;">slash command değil: sadece "dynamic workflow kullan" de.</div>
+  <div class="list">
+    <div class="item">
+      <span class="n">01</span>
+      <div>
+        <div class="t">subagent'ın sorunu</div>
+        <div class="d">subagent = kendi context'i olan <b>ayrı bir claude code instance</b>. tek işe<br>odaklanır, iyi çalışır. ama <b>non-deterministik</b>: bazen 4 tane açar,<br>bazen 10, bazen hiç. aynı işi iki kez aynı şekilde yapmaz.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">02</span>
+      <div>
+        <div class="t" style="color:var(--accent);">workflow'un çözümü</div>
+        <div class="d">claude arkada bir <b>javascript dosyası üretiyor</b> — fazlar, subagent'lar,<br>her birinin prompt'u. <b>s'e bas, kaydet</b> → artık bir slash command.<br>her çağırdığında <b>birebir aynı</b> subagent'ları çalıştırır.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">03</span>
+      <div>
+        <div class="t">fazlar sıralı, agent'lar paralel</div>
+        <div class="d">build → integration → review → verify sırayla; build içindeki 4 agent<br>aynı anda. paralel olduğu için <b>tek agent süresinde çok daha fazlası biter</b>.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">04</span>
+      <div>
+        <div class="t">yüzlerce subagent</div>
+        <div class="d">bu bir hata değil, özellik. <b>saatler veya günler</b> süren işler için tasarlandı.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">05</span>
+      <div>
+        <div class="t">js'i sen düzenle</div>
+        <div class="d">her subagent'ın modelini değiştirebilirsin. zayıf iş için sonnet,<br>zor iş için opus. <b>kod olduğu için deterministik.</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="botbar">
+    <span class="note">non-determinizmi kodla sabitlemek</span>
+    <span class="note" style="font-size:15px;">agent factory podcast</span>
+  </div>
+</section>
+
+<!-- 08 · PRATİK TİPLER 1 (bölüm 8a) -->
+<section class="canvas r45" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="border-bottom:2px solid var(--line); padding-bottom:20px;">
+    <span class="serial">SÜZGEÇ / 04</span>
+    <span class="handle">fig. 08 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="margin-top:30px; font-size:44px;">pratik tipler <span class="mono" style="font-size:26px; color:var(--muted);">1/2</span></div>
+  <div class="note" style="margin-top:12px;">yk sugi'nin claude code tips reposundan.</div>
+  <div class="list">
+    <div class="item">
+      <span class="n">01</span>
+      <div>
+        <div class="t">alias kur</div>
+        <div class="d">her seferinde <b>claude</b> yazma. küçük ama günde onlarca kez.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">02</span>
+      <div>
+        <div class="t">projeleri tek klasörde tut</div>
+        <div class="d">agent projeler arası referans verebilsin:<br>"şu projedeki bu parçayı, bu projedekiyle birleştir".</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">03</span>
+      <div>
+        <div class="t">geniş başla, sonra derinleş</div>
+        <div class="d">önce mimari ve kütüphane sorusu, sonra detay.<br>güncel bilgi gerekiyorsa <b>araştırma yaptır</b>.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">04</span>
+      <div>
+        <div class="t">git ve github cli öğren</div>
+        <div class="d">cli beklediğinden çok daha güçlü. <b>git</b> ve <b>gh</b> ile başla.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">05</span>
+      <div>
+        <div class="t">çıktıyı doğrula</div>
+        <div class="d">kodu değil <b>davranışı</b> test et. testler ve github actions ile<br>doğrulamayı otomatikleştir.</div>
+      </div>
+    </div>
+  </div>
+  <div class="botbar">
+    <span class="note">devamı → 2/2</span>
+    <span class="note" style="font-size:15px;">agent factory podcast</span>
+  </div>
+</section>
+
+<!-- 09 · PRATİK TİPLER 2 (bölüm 8b) -->
+<section class="canvas r45" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="border-bottom:2px solid var(--line); padding-bottom:20px;">
+    <span class="serial">SÜZGEÇ / 05</span>
+    <span class="handle">fig. 09 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="margin-top:30px; font-size:44px;">pratik tipler <span class="mono" style="font-size:26px; color:var(--muted);">2/2</span></div>
+  <div class="note" style="margin-top:12px;">akış ve iletişimle ilgili olanlar.</div>
+  <div class="list">
+    <div class="item">
+      <span class="n">06</span>
+      <div>
+        <div class="t">draft pr aç</div>
+        <div class="d">main'e push'latma. draft pr <b>agent'ın açtığını belli eder</b>;<br>kontrol edip ready'ye çevirirsin.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">07</span>
+      <div>
+        <div class="t">sesle konuş</div>
+        <div class="d"><b>/voice</b> — niyeti yazmaktan hızlı ifade edersin.<br>yazım hatası olsun, <b>niyet netse claude çözüyor</b>.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">08</span>
+      <div>
+        <div class="t">az context = çok soru</div>
+        <div class="d">bilmediğin bir alandaysan önce sor. bildiğin alanda direkt söyle.<br>gerçek bir meslektaşla nasılsa öyle.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">09</span>
+      <div>
+        <div class="t">claude design ile planla</div>
+        <div class="d">görsel wireframe'i html olarak çıkar, <b>prompt olarak</b> claude code'a ver.<br>figma/canva'ya da export edilir.</div>
+      </div>
+    </div>
+  </div>
+  <div class="botbar">
+    <span class="note">tips reposu · yk sugi (cs dojo)</span>
+    <span class="note" style="font-size:15px;">agent factory podcast</span>
+  </div>
+</section>
+
+<!-- 10 · ZİHNİYET (bölüm 9) -->
+<section class="canvas r45" style="display:flex; flex-direction:column;">
+  <div class="topbar" style="border-bottom:2px solid var(--line); padding-bottom:20px;">
+    <span class="serial">SÜZGEÇ / 06</span>
+    <span class="handle">fig. 10 · @omerfrkdemiral</span>
+  </div>
+  <div class="h1" style="margin-top:30px; font-size:44px;">zihniyet:<br>iş artık kod yazmak değil</div>
+  <div class="note" style="margin-top:12px;">videonun asıl tezi.</div>
+  <div class="list">
+    <div class="item">
+      <span class="n">01</span>
+      <div>
+        <div class="t" style="color:var(--accent);">review %10'dan %90'a çıktı</div>
+        <div class="d">el ile yazarken review'ün <b>%90'ı yazarken</b> oluyordu — kodu yazarken<br>zaten okuyordun. claude code'la tersine döndü: iş artık <b>%90 review</b>.<br>çoğu kişi bu zihniyet değişimini henüz yapmadı.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">02</span>
+      <div>
+        <div class="t">sen karar vericisin</div>
+        <div class="d">modeller <b>gereğinden fazla kod yazma eğiliminde</b>. 100 bin satır ürettiyse<br>100 bin satırı commit etmek zorunda değilsin. tek seferlik vibe coding'de<br>kodu hiç okumayabilirsin; production'da draft pr + review.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">03</span>
+      <div>
+        <div class="t">mühendis → product manager</div>
+        <div class="d">syntax'a değil <b>mimariye, özelliğe ve eksiklere</b> odaklan. typescript<br>yazarken makine kodunu düşünmediğin gibi. teknik uzmanlık, iyi zevk ve<br><b>high agency</b> hâlâ şart.</div>
+      </div>
+    </div>
+    <div class="item">
+      <span class="n">04</span>
+      <div>
+        <div class="t">ortamı kur, döngüden çık</div>
+        <div class="d">hooks, permissions, claude.md ve sandbox ile claude'un etrafına <b>doğru<br>ortamı</b> kur. github'a claude app kur: ci kırılınca veya yorum gelince<br><b>yeşile dönene kadar</b> kendi düzeltir.</div>
+      </div>
+    </div>
+  </div>
+  <div class="box" style="border-left:3px solid var(--accent); border-radius:0; margin-bottom:20px;">
+    <p><b style="color:var(--accent);">claudify:</b> yapmaktan hoşlanmadığın şeyi otomatikleştir, sevdiğini kendine bırak. lydia keynote slaytlarını claude'a yaptırmayı bıraktı — çünkü onu yapmayı seviyor. her şeyi otomatikleştirmek amaç değil.</p>
+  </div>
+  <div class="botbar">
+    <span class="note">konuklar: lydia hallie (anthropic) · yk sugi (cs dojo)</span>
+    <span class="note" style="font-size:15px;">61 dk · 9 bölüm · 45 not</span>
+  </div>
+</section>
+
+</body>
+</html>
