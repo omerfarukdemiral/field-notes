@@ -30,7 +30,7 @@ Bölüm 06'daki reklam kesiti (39:10–40:21) çıkarıldı.
 
 ## Bölümler
 
-Altyazı dosyaları [`altyazilar/`](altyazilar/) altında:
+Video, konu bütünlüğüne göre şu parçalara ayrıldı:
 
 | # | Bölüm | Aralık |
 |---|---|---|

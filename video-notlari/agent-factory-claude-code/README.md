@@ -23,7 +23,7 @@ Claude Code'un içeride nasıl çalıştığı anlatılıyor: model neyi görüy
 
 ## Bölümler
 
-Altyazı dosyaları [`altyazilar/`](altyazilar/) altında, videodaki sırayla:
+Video, konu bütünlüğüne göre şu parçalara ayrıldı:
 
 | # | Bölüm | Süre |
 |---|---|---|

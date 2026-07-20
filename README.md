@@ -14,7 +14,7 @@ Bitmiş bir doküman değil — sürekli büyüyen bir defter.
 
 | Klasör | İçerik |
 |---|---|
-| [`video-notlari/`](video-notlari/) | Uzun teknik videoların Türkçe altyazıları ve içlerinden çıkarılmış infografik kartları |
+| [`video-notlari/`](video-notlari/) | Uzun teknik videoların içinden çıkarılmış infografik kartları |
 
 Yeni başlıklar eklendikçe tablo büyüyecek.
 

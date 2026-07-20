@@ -1,6 +1,6 @@
 # video-notlari
 
-Uzun teknik videolar → Türkçe altyazılı bölümler + bakınca anlaşılan infografik kartları.
+Uzun teknik videolar → bakınca anlaşılan infografik kartları.
 
 ## Seriler
 
@@ -17,11 +17,10 @@ Her serinin yapısı aynı:
 seri-adi/
 ├── README.md          seri künyesi, bölüm listesi, kart listesi
 ├── infografik.html    tüm kartların kaynağı — tek dosya
-├── gorseller/         export edilmiş PNG kartlar
-└── altyazilar/        bölüm bölüm Türkçe altyazı (.srt)
+└── gorseller/         export edilmiş PNG kartlar
 ```
 
-Videoların kendisi repoda değil (GB'larca yer tutuyorlar). Altyazı dosyalarını orijinal videoya bindirmek yeterli.
+Videolar ve altyazı dosyaları repoda değil. Burada duran şey çıkarımlar.
 
 ## Kartları yeniden üretmek
 
