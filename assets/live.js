@@ -81,7 +81,16 @@
         for (var k = 0; k < kids.length; k++) {
           if (parseFloat(getComputedStyle(kids[k]).flexGrow) > 0) grow++;
         }
-        if (grow >= 2) { cache(el); el.style.flexDirection = 'column'; el.style.gap = '16px'; }
+        if (grow >= 2) {
+          cache(el); el.style.flexDirection = 'column'; el.style.gap = '16px';
+        } else {
+          // sıralı numara gibi kısa öğeler sıkışıp bölünmesin (ör. "01")
+          for (var kk = 0; kk < kids.length; kk++) {
+            if ((kids[kk].textContent || '').trim().length <= 4) {
+              cache(kids[kk]); kids[kk].style.flexShrink = '0'; kids[kk].style.whiteSpace = 'nowrap';
+            }
+          }
+        }
       }
       fonts.push([el, fontMap(parseFloat(cs.fontSize))]);
     }
