@@ -37,38 +37,12 @@ body { background:#08070E; padding:0 0 72px; }
   .page-foot { flex-direction:column; gap:8px; font-size:13px; }
 }
 
-/* Mobil: karta dokununca büyüt — kart üstünde küçük bir ipucu rozeti */
-.scaler { position:relative; }
-.scaler.zoomable { cursor:zoom-in; -webkit-tap-highlight-color:transparent; }
-.scaler.zoomable::after {
-  content:"⤢ oku"; position:absolute; right:10px; bottom:10px;
-  font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.5px;
-  color:#CDCBE0; background:rgba(21,16,40,.9); border:1px solid #2C2946;
-  padding:5px 9px; border-radius:6px; pointer-events:none;
-}
-
-/* Tam ekran okunur görüntüleyici */
-.cardzoom {
-  position:fixed; inset:0; z-index:9999;
-  background:rgba(8,7,14,.97);
-  overflow:auto; -webkit-overflow-scrolling:touch;
-  overscroll-behavior:contain;
-}
-.cardzoom-pan {
-  min-width:100%; min-height:100%;
-  display:flex; align-items:flex-start; justify-content:flex-start;
-  padding:16px;
-}
-.cardzoom-box { flex:0 0 auto; }
-.cardzoom-x {
-  position:fixed; top:14px; right:14px; z-index:10000;
-  width:42px; height:42px; border-radius:50%;
-  border:1px solid #2C2946; background:#151028; color:#CDCBE0;
-  font-size:24px; line-height:1; cursor:pointer;
-}
-.cardzoom-x:hover { border-color:#A78BFA; }
-.cardzoom-hint {
-  position:fixed; left:0; right:0; bottom:14px; z-index:10000;
-  text-align:center; font-family:'IBM Plex Mono',monospace;
-  font-size:12px; color:#625F80; pointer-events:none;
+/* Mobil reflow: kart içeriği akışkan hale gelir (live.js yönetir) */
+@media (max-width:720px) {
+  .canvas { word-break:break-word; }
+  .svgscroll {
+    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain; margin:6px -4px;
+  }
+  .svgscroll svg { display:block; }
 }
